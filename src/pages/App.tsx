@@ -32,7 +32,7 @@ const AppCard = (app: CardInfo) => {
       <CardActionArea href={app.url}>
         <div className='full-width image-container padding'>
           <img className='full-width' src={app.image} alt="" />
-          <Typography className='text-center app-name' variant='body1'>{app.name}</Typography>
+          <Typography className='text-center app-name text-ellipsis' variant='body1'>{app.name}</Typography>
         </div>
       </CardActionArea>
     </Card>

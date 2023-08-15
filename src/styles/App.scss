@@ -30,6 +30,19 @@
   }
 }
 
+
+@media screen and (max-width: 699px) {
+  .homepage {
+    .intro {
+      width: 100%;
+    }
+
+    .image-container {
+      display: none;
+    }
+  }
+}
+
 .showcase {
   background-color: #e8f1f6;
 
