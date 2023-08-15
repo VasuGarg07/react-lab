@@ -6,6 +6,7 @@ import App from './pages/App.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import AniQuote from './pages/AniQuote.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
+import ColorGen from './pages/ColorGen.tsx';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/shadowgen",
     element: <ShadowGenerator />,
+  },
+  {
+    path: "/colorgen",
+    element: <ColorGen />,
   }
 ]);
 

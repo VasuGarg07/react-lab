@@ -39,7 +39,7 @@ const AniQuote = () => {
   useEffect(() => { fetchData(randomUrl) }, []);
 
   return (
-    <div className="container full-viewport-height full-width flex-centered-column">
+    <div className="aniquote-container full-viewport-height full-width flex-centered-column">
       <div className='main padding flex-centered-column'>
         <Selector />
         <QuoteBox

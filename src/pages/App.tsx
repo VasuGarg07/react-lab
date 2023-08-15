@@ -12,7 +12,12 @@ const apps: CardInfo[] = [
   {
     image: '/thumbs/shadowgen.png',
     name: 'Box Shadow Generator',
-    url: '/shadowGen',
+    url: '/shadowgen',
+  },
+  {
+    image: '/thumbs/colorgen.png',
+    name: 'Color Generator',
+    url: '/colorgen',
   }
 ]
 
