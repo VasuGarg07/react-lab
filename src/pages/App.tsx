@@ -10,6 +10,21 @@ const apps: CardInfo[] = [
     url: '/aniquote',
   },
   {
+    image: '/thumbs/quiz.png',
+    name: 'Popup Quiz',
+    url: '/trivia',
+  },
+  {
+    image: '/thumbs/cookbook.png',
+    name: 'Cookbook',
+    url: '/cookbook',
+  },
+  {
+    image: '/thumbs/bartender.png',
+    name: 'The Bartender',
+    url: '/bartender',
+  },
+  {
     image: '/thumbs/shadowgen.png',
     name: 'Box Shadow Generator',
     url: '/shadowgen',
@@ -20,15 +35,10 @@ const apps: CardInfo[] = [
     url: '/colorgen',
   },
   {
-    image: '/thumbs/quiz.png',
-    name: 'Popup Quiz',
-    url: '/trivia',
+    image: '/thumbs/budget.png',
+    name: 'Budget Buddy',
+    url: '/budget',
   },
-  {
-    image: '/thumbs/bartender.png',
-    name: 'The Bartender',
-    url: '/bartender',
-  }
 ]
 
 const AppCard = (app: CardInfo) => {

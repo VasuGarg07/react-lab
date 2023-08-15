@@ -12,6 +12,8 @@ import App from './pages/App.tsx';
 import ColorGen from './pages/ColorGen.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
+import { CookBookProvider } from '@contexts/cookboox.context.tsx';
+import { BudgetProvider } from '@contexts/budget.context.tsx';
 
 
 const router = createBrowserRouter([
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
   {
     path: "/bartender",
     element: <BartenderProvider />,
+  },
+  {
+    path: "/cookbook",
+    element: <CookBookProvider />,
+  },
+  {
+    path: "/budget",
+    element: <BudgetProvider />,
   },
 ]);
 

@@ -45,3 +45,43 @@ export type Meal = {
   instructions: string,
   ingredients: string[]
 }
+
+// Budget Buddy
+export enum ExpenseType {
+  Housing = 'Housing',
+  Transportation = 'Transportation',
+  Food = 'Food',
+  Utilities = 'Utilities',
+  Clothing = 'Clothing',
+  Medical = 'Medical/Healthcare',
+  Insurance = 'Insurance',
+  Supplies = 'Household Items/Supplies',
+  Entertainment = 'Entertainment',
+  Personal = 'Personal',
+}
+
+export interface Transaction {
+  id: string,
+  amount: number,
+  date: string,
+  label: string,
+  type: ExpenseType
+}
+
+export enum ReducerActions {
+  ADD,
+  DELETE,
+  CHANGE,
+  ADD_MULTIPLE
+}
+
+export type Action =
+  | { type: ReducerActions.ADD; item: Transaction }
+  | { type: ReducerActions.CHANGE; item: Transaction }
+  | { type: ReducerActions.DELETE; item: Transaction }
+  | { type: ReducerActions.ADD_MULTIPLE; items: Transaction[] };
+
+export interface Aggregate {
+  type: string,
+  amount: number
+}
