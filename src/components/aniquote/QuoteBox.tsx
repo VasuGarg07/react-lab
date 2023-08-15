@@ -1,5 +1,5 @@
 import { Button, CircularProgress, Typography } from "@mui/material"
-import { Quote } from "../../shared/interface"
+import { Quote } from "@shared/interface"
 
 interface Props {
   quote: Quote,

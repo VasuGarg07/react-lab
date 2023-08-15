@@ -1,6 +1,6 @@
 
 import { Button, Typography } from '@mui/material'
-import '../styles/Errorpage.scss'
+import '@styles/Errorpage.scss'
 
 export default function ErrorPage() {
   return (

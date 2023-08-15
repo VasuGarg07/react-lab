@@ -1,0 +1,17 @@
+.foodgrid-container {
+  min-height: 100vh;
+  padding: 32px;
+  width: 80vw;
+  margin: auto;
+}
+
+.loading {
+  padding: 32px;
+  background-color: rgb(243, 246, 249);
+}
+
+@media screen and (max-width:999px) {
+  .drinks-container {
+    width: calc(100vw - 8px);
+  }
+}

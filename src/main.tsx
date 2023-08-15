@@ -1,16 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
-import App from './pages/App.tsx';
-import ErrorPage from './pages/ErrorPage.tsx';
-import AniQuote from './pages/AniQuote.tsx';
-import ShadowGenerator from './pages/ShadowGenerator.tsx';
-import ColorGen from './pages/ColorGen.tsx';
-import PopQuiz from './pages/PopQuiz.tsx';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Result from './components/trivia/pages/Result.tsx';
-import Trivia from './components/trivia/pages/Trivia.tsx';
 import SetupQuiz from './components/trivia/pages/SetupQuiz.tsx';
+import Trivia from './components/trivia/pages/Trivia.tsx';
+import { BartenderProvider } from './contexts/bartender.context.tsx';
+import { QuizProvider } from './contexts/quiz.context.tsx';
+import AniQuote from './pages/AniQuote.tsx';
+import App from './pages/App.tsx';
+import ColorGen from './pages/ColorGen.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
+import ShadowGenerator from './pages/ShadowGenerator.tsx';
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/trivia",
-    element: <PopQuiz />,
+    element: <QuizProvider />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -49,7 +50,11 @@ const router = createBrowserRouter([
         element: <Result />
       }
     ],
-  }
+  },
+  {
+    path: "/bartender",
+    element: <BartenderProvider />,
+  },
 ]);
 
 

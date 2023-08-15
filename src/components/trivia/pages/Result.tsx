@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@mui/material";
-import './Result.scss'
-import { useName, useScore } from "../../../pages/PopQuiz";
+import '@styles/popup-quiz/Result.scss'
+import { useQuizContext } from "@contexts/quiz.context";
 
 const Result = () => {
-  const { name } = useName().nameType;
-  const { score } = useScore().scoreType;
+  const { name, score } = useQuizContext();
   const navigate = useNavigate()
 
   useEffect(() => {

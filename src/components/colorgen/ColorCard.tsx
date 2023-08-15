@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Alert, Snackbar } from '@mui/material';
-import { Utils } from '../../shared/utils';
+import { Utils } from '@shared/utils';
 
 interface ColorProps {
   rgb: number[],

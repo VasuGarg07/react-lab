@@ -1,0 +1,28 @@
+.food-card {
+  box-shadow:
+    0px 1.5px 2.5px rgba(0, 0, 0, 0.04),
+    0px 12px 20px rgba(0, 0, 0, 0.08) !important;
+
+  .card-content {
+    padding: 12px 16px !important;
+
+    .text-wrap {
+      width: calc(100% - 48px);
+    }
+
+    .favorite-btn:hover {
+      transform: translateY(-4px);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    box-shadow:
+      0px 1.1px 2.7px rgba(0, 0, 0, 0.048),
+      0px 3.6px 8.9px rgba(0, 0, 0, 0.072),
+      0px 16px 40px rgba(0, 0, 0, 0.12) !important;
+
+    transform: translateY(-4px);
+    transition: all 0.2s ease-in-out;
+  }
+}

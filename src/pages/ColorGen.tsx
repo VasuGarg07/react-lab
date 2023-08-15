@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Values from 'values.js';
-import ColorCard from '../components/colorgen/ColorCard';
-import '../styles/ColorGen.scss';
+import ColorCard from '@components/colorgen/ColorCard';
+import '@styles/ColorGen.scss';
 import { Typography } from '@mui/material';
 
 

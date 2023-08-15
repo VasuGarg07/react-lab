@@ -1,13 +1,11 @@
-import './Trivia.scss';
 import { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
-import { useName, useQuestions, useScore } from '../../../pages/PopQuiz';
+import { useQuizContext } from "@contexts/quiz.context";
 import QuestionCard from '../components/Question';
+import '@styles/popup-quiz/Trivia.scss'
 
 const Trivia = () => {
-  const { name } = useName().nameType;
-  const { questions } = useQuestions().questionsType;
-  const { score, setScore } = useScore().scoreType;
+  const { name, questions, score, setScore } = useQuizContext();
 
   const [options, setOptions] = useState<string[]>([]);
   const [currQues, setCurrQues] = useState(0);

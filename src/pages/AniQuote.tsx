@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import '../styles/AniQuote.scss';
-import { Quote } from '../shared/interface';
-import QuoteBox from '../components/aniquote/QuoteBox';
-import Selector from '../components/aniquote/Selector';
+import { Quote } from '@shared/interface';
+import QuoteBox from '@components/aniquote/QuoteBox';
+import Selector from '@components/aniquote/Selector';
+import '@styles/AniQuote.scss';
 
 
 const randomUrl = 'https://animechan.vercel.app/api/random';

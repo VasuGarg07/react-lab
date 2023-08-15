@@ -1,7 +1,7 @@
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
 import { Button, Card, CardActionArea, Grid, Typography } from '@mui/material';
-import { CardInfo } from '../shared/interface';
-import '../styles/App.scss';
+import { CardInfo } from '@shared/interface';
+import '@styles/App.scss';
 
 const apps: CardInfo[] = [
   {
@@ -23,6 +23,11 @@ const apps: CardInfo[] = [
     image: '/thumbs/quiz.png',
     name: 'Popup Quiz',
     url: '/trivia',
+  },
+  {
+    image: '/thumbs/bartender.png',
+    name: 'The Bartender',
+    url: '/bartender',
   }
 ]
 

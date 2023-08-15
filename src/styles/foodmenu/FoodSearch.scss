@@ -1,0 +1,35 @@
+.search-container {
+  padding: 16px 32px;
+  width: 80vw;
+  margin: auto;
+
+  .input {
+    outline: none;
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid;
+    width: 30%;
+
+    &:focus {
+      padding: 5px 6px;
+      border: 2px solid;
+    }
+  }
+}
+
+@media screen and (max-width:999px) {
+  .search-container {
+    width: calc(100vw - 8px);
+  }
+}
+
+@media screen and (max-width:599px) {
+  .search-container {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .input {
+      width: 100%;
+    }
+  }
+}
