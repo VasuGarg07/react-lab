@@ -1,0 +1,46 @@
+.question-card {
+  border: 1px solid;
+  border-radius: 4px;
+
+  .question {
+    min-height: 320px;
+    justify-content: space-evenly;
+
+    .options {
+      flex-wrap: wrap;
+
+      .option {
+        width: calc(50% - 16px);
+        box-shadow: 0 0 1px black;
+      }
+
+      .select {
+        background-color: rgb(7, 207, 0);
+        color: white;
+      }
+
+      .wrong {
+        background-color: rgb(233, 0, 0);
+        color: white;
+      }
+    }
+
+    .controls {
+      justify-content: space-around;
+
+      .control-btn {
+        width: 160px;
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 614px) {
+
+  .question-card .question .options .option {
+    width: 100% !important;
+  }
+}

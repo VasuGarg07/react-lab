@@ -7,6 +7,10 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import AniQuote from './pages/AniQuote.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
 import ColorGen from './pages/ColorGen.tsx';
+import PopQuiz from './pages/PopQuiz.tsx';
+import Result from './components/trivia/pages/Result.tsx';
+import Trivia from './components/trivia/pages/Trivia.tsx';
+import SetupQuiz from './components/trivia/pages/SetupQuiz.tsx';
 
 
 const router = createBrowserRouter([
@@ -26,6 +30,25 @@ const router = createBrowserRouter([
   {
     path: "/colorgen",
     element: <ColorGen />,
+  },
+  {
+    path: "/trivia",
+    element: <PopQuiz />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/trivia",
+        element: <SetupQuiz />
+      },
+      {
+        path: "quiz",
+        element: <Trivia />
+      },
+      {
+        path: "result",
+        element: <Result />
+      }
+    ],
   }
 ]);
 

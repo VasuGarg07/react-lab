@@ -18,6 +18,11 @@ const apps: CardInfo[] = [
     image: '/thumbs/colorgen.png',
     name: 'Color Generator',
     url: '/colorgen',
+  },
+  {
+    image: '/thumbs/quiz.png',
+    name: 'Popup Quiz',
+    url: '/trivia',
   }
 ]
 
