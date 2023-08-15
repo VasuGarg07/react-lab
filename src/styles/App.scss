@@ -40,6 +40,10 @@
   }
 
   .card {
+    .image-container img {
+      padding: 16px 0;
+    }
+
     .app-name {
       text-transform: uppercase;
       font-family: 'Overlock', cursive;

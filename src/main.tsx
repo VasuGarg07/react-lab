@@ -5,6 +5,7 @@ import { CssBaseline } from '@mui/material';
 import App from './pages/App.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import AniQuote from './pages/AniQuote.tsx';
+import ShadowGenerator from './pages/ShadowGenerator.tsx';
 
 
 const router = createBrowserRouter([
@@ -16,7 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/aniquote",
     element: <AniQuote />,
-    errorElement: <ErrorPage />
+  },
+  {
+    path: "/shadowgen",
+    element: <ShadowGenerator />,
   }
 ]);
 

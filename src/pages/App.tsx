@@ -8,6 +8,11 @@ const apps: CardInfo[] = [
     image: '/thumbs/aniquote.png',
     name: 'Anime Quotes',
     url: '/aniquote',
+  },
+  {
+    image: '/thumbs/shadowgen.png',
+    name: 'Box Shadow Generator',
+    url: '/shadowGen',
   }
 ]
 
@@ -16,14 +21,13 @@ const AppCard = (app: CardInfo) => {
     <Card className='card'>
       <CardActionArea href={app.url}>
         <div className='full-width image-container padding'>
-          <img className='full-width padding' src={app.image} alt="" />
+          <img className='full-width' src={app.image} alt="" />
           <Typography className='text-center app-name' variant='body1'>{app.name}</Typography>
         </div>
       </CardActionArea>
     </Card>
   );
 }
-
 
 export default function App() {
 
