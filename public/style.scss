@@ -1,0 +1,27 @@
+@import './utilities.scss';
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+
+  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(226, 224, 224);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #70a9e9;
+}
