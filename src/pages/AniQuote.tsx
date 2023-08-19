@@ -5,9 +5,9 @@ import Selector from '@components/aniquote/Selector';
 import '@styles/AniQuote.scss';
 
 
-const randomUrl = 'https://animechan.vercel.app/api/random';
-const byTitleUrl = 'https://animechan.vercel.app/api/quotes/anime?title=';
-const byCharacterUrl = 'https://animechan.vercel.app/api/quotes/character?name=';
+const randomUrl = 'https://animechan.xyz/api/random';
+const byTitleUrl = 'https://animechan.xyz/api/quotes/anime?title=';
+const byCharacterUrl = 'https://animechan.xyz/api/quotes/character?name=';
 
 
 const AniQuote = () => {
@@ -39,9 +39,11 @@ const AniQuote = () => {
   useEffect(() => { fetchData(randomUrl) }, []);
 
   return (
-    <div className="aniquote-container full-viewport-height full-width flex-centered-column">
+    <div className="aniquote-container full-width flex-centered-column">
       <div className='main padding flex-centered-column'>
-        <Selector />
+        <Selector
+          fetchByAnime={fetchByAnime}
+          fetchByChar={fetchByChar} />
         <QuoteBox
           quote={quote}
           error={error}
