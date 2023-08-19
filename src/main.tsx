@@ -14,6 +14,7 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
 import { CookBookProvider } from '@contexts/cookboox.context.tsx';
 import { BudgetProvider } from '@contexts/budget.context.tsx';
+import Mortage from '@pages/Mortage.tsx';
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: "/budget",
     element: <BudgetProvider />,
+  },
+  {
+    path: "/mortage",
+    element: <Mortage />,
   },
 ]);
 

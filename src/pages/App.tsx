@@ -5,6 +5,26 @@ import '@styles/App.scss';
 
 const apps: CardInfo[] = [
   {
+    image: '/thumbs/shadowgen.png',
+    name: 'Box Shadow Generator',
+    url: '/shadowgen',
+  },
+  {
+    image: '/thumbs/colorgen.png',
+    name: 'Color Generator',
+    url: '/colorgen',
+  },
+  {
+    image: '/thumbs/budget.png',
+    name: 'Budget Buddy',
+    url: '/budget',
+  },
+  {
+    image: '/thumbs/mortage.png',
+    name: 'Mortage Calculator',
+    url: '/mortage',
+  },
+  {
     image: '/thumbs/aniquote.png',
     name: 'Anime Quotes',
     url: '/aniquote',
@@ -24,21 +44,7 @@ const apps: CardInfo[] = [
     name: 'The Bartender',
     url: '/bartender',
   },
-  {
-    image: '/thumbs/shadowgen.png',
-    name: 'Box Shadow Generator',
-    url: '/shadowgen',
-  },
-  {
-    image: '/thumbs/colorgen.png',
-    name: 'Color Generator',
-    url: '/colorgen',
-  },
-  {
-    image: '/thumbs/budget.png',
-    name: 'Budget Buddy',
-    url: '/budget',
-  },
+
 ]
 
 const AppCard = (app: CardInfo) => {

@@ -85,3 +85,12 @@ export interface Aggregate {
   type: string,
   amount: number
 }
+
+// Mortage Calculator
+export interface MortageData {
+  homeValue: number,
+  downPayment: number,
+  loanAmount: number,
+  loanTerm: number,
+  interestRate: number
+}

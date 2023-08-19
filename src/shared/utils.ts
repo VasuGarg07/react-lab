@@ -13,6 +13,7 @@ export namespace Utils {
     return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
   }
 
+  // Budget Buddy
   export const formatDate = (date: Date): string => {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -82,4 +83,8 @@ export namespace Utils {
     },
   }));
 
+  // Mortage Calc 
+  export const fixInt = (num: number): number => {
+    return parseFloat(num.toFixed(0))
+  }
 }
