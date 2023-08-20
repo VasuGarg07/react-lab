@@ -94,3 +94,20 @@ export interface MortageData {
   loanTerm: number,
   interestRate: number
 }
+
+// Periodic Table
+export interface PeriodicElement {
+  name: string,
+  summary: string,
+  symbol: string,
+  category: string,
+  number: number,
+  source: string,
+  appearance: string | null,
+  atomic_mass: number,
+  molar_heat: number | null,
+  density: number | null,
+  melt: number | null,
+  boil: number | null,
+  [key: string]: any
+}
