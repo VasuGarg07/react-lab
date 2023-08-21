@@ -4,6 +4,7 @@ import { CardType, loadCards } from '@shared/memory-game.utils';
 import '@styles/MemoryGame.scss'
 import { useEffect, useState } from 'react';
 
+// TODO: Game Difficulty and Winning Banner
 const MemoryGame = () => {
   const [cards, setCards] = useState<CardType[]>(loadCards());
   const [turns, setTurns] = useState(0);
@@ -31,7 +32,10 @@ const MemoryGame = () => {
   }
 
   useEffect(() => {
-    console.log(matchedPairs)
+    // console.log(matchedPairs)
+    if (matchedPairs == cards.length / 2) {
+      // restartGame()
+    }
   }, [matchedPairs])
 
   useEffect(() => {
