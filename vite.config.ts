@@ -11,6 +11,7 @@ export default defineConfig({
       '@components': '/src/components',
       '@shared': '/src/shared',
       '@pages': '/src/pages',
+      '@assets': '/src/assets',
     },
   },
 })

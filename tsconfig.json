@@ -38,6 +38,9 @@
       ],
       "@pages/*": [
         "src/pages/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
       ]
       // Add more paths as needed
     }
