@@ -4,7 +4,7 @@ import Container from '@components/shadowgen/Container';
 export default function ShadowGenerator() {
   return (
     <>
-      <div className='app-name padding text-center'>
+      <div className='app-title padding text-center'>
         CSS Shadow Generator
       </div>
       <div className='mainApp'>

@@ -41,3 +41,15 @@ export const loadCards = (num: number = 4): CardType[] => {
   }))
   return shuffleArray(gameCards)
 };
+
+export enum GameState {
+  Setup = 'setup',
+  Playing = 'playing',
+  Gameover = 'gameover'
+}
+
+export enum GameMode {
+  Easy = 'easy',
+  Medium = 'medium',
+  Difficult = 'difficult'
+}

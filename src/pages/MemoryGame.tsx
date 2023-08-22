@@ -1,17 +1,26 @@
+import Difficulty from '@components/memory/Difficulty';
 import { Game } from '@components/memory/Game';
-import { Button } from '@mui/material';
-import { CardType, loadCards } from '@shared/memory-game.utils';
+import Result from '@components/memory/Result';
+import { Button, Typography } from '@mui/material';
+import { CardType, GameState } from '@shared/memory-game.utils';
 import '@styles/MemoryGame.scss'
 import { useEffect, useState } from 'react';
 
-// TODO: Game Difficulty and Winning Banner
+// TODO: Create Leaderboard
 const MemoryGame = () => {
-  const [cards, setCards] = useState<CardType[]>(loadCards());
+
+  const [name, setName] = useState("");
+
+  const [cards, setCards] = useState<CardType[]>([]);
   const [turns, setTurns] = useState(0);
+
   const [firstChoice, setFirstChoice] = useState<CardType | null>(null);
   const [secondChoice, setSecondChoice] = useState<CardType | null>(null);
   const [interaction, setInteraction] = useState(true);
+
   const [matchedPairs, setMatchedPairs] = useState(0);
+
+  const [gameState, setGameState] = useState(GameState.Setup);
 
   const handleChoice = (card: CardType): void => {
     firstChoice ? setSecondChoice(card) : setFirstChoice(card)
@@ -24,17 +33,17 @@ const MemoryGame = () => {
     setInteraction(true);
   }
 
-  const restartGame = (): void => {
+  const resetGame = (): void => {
     setFirstChoice(null);
     setSecondChoice(null);
-    setCards(loadCards())
     setTurns(0);
+    setCards([])
+    setGameState(GameState.Setup)
   }
 
   useEffect(() => {
-    // console.log(matchedPairs)
-    if (matchedPairs == cards.length / 2) {
-      // restartGame()
+    if (matchedPairs > 0 && matchedPairs == cards.length / 2) {
+      setGameState(GameState.Gameover)
     }
   }, [matchedPairs])
 
@@ -59,23 +68,55 @@ const MemoryGame = () => {
   }, [firstChoice, secondChoice])
 
 
+  const renderComponent = (): JSX.Element => {
+    switch (gameState) {
+
+      case GameState.Setup:
+        return (
+          <Difficulty
+            name={name}
+            setName={setName}
+            setCards={setCards}
+            setGameState={setGameState}
+          />
+        )
+
+      case GameState.Playing:
+        return (
+          <>
+            <div className='header full-width padding-hr flex-centered-container'>
+              <img src="/images/memory-game.png" alt="" />
+              <div className='app-title text-center'>MEMORY GAME</div>
+              <span className='spacer'></span>
+              <div>
+                <div className='text-center player'>Player: {name} </div>
+                <div className='flex-centered-container' style={{ alignItems: 'baseline' }}>
+                  <Typography variant="subtitle2">Turns: {turns}</Typography>
+                  <Button onClick={resetGame} color='info' size='small'>Restart</Button>
+                </div>
+              </div>
+            </div>
+            <Game
+              cards={cards}
+              firstChoice={firstChoice}
+              secondChoice={secondChoice}
+              interaction={interaction}
+              handleChoice={handleChoice}
+            />
+          </>
+        )
+
+      default:
+        return (
+          <Result name={name} turns={turns} resetGame={resetGame} />
+        )
+    }
+  }
+
 
   return (
     <div className='game-container flex-centered-column'>
-      <div className='header full-width padding-hr flex-centered-container'>
-        <img src="/images/memory-game.png" alt="" />
-        <div className='app-name text-center'>MEMORY GAME</div>
-        <span className='spacer'></span>
-        {turns > 0 && <p>SCORE: {turns}</p>}
-        <Button variant='outlined' onClick={restartGame} color='info'>Reset Game</Button>
-      </div>
-      <Game
-        cards={cards}
-        firstChoice={firstChoice}
-        secondChoice={secondChoice}
-        interaction={interaction}
-        handleChoice={handleChoice}
-      />
+      {renderComponent()}
     </div>
   )
 }

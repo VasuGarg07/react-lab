@@ -30,19 +30,6 @@
   }
 }
 
-
-@media screen and (max-width: 699px) {
-  .homepage {
-    .intro {
-      width: 100%;
-    }
-
-    .image-container {
-      display: none;
-    }
-  }
-}
-
 .showcase {
   background-color: #e8f1f6;
 
@@ -61,6 +48,20 @@
       text-transform: uppercase;
       font-family: 'Overlock', cursive;
       font-weight: bold;
+      font-style: normal;
+    }
+  }
+}
+
+
+@media screen and (max-width: 699px) {
+  .homepage {
+    .intro {
+      width: 100%;
+    }
+
+    .image-container {
+      display: none;
     }
   }
 }

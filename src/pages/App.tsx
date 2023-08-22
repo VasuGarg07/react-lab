@@ -44,7 +44,11 @@ const apps: CardInfo[] = [
     name: 'The Bartender',
     url: '/bartender',
   },
-
+  {
+    image: '/thumbs/memory.png',
+    name: 'Poke Memory',
+    url: '/memory',
+  },
 ]
 
 const AppCard = (app: CardInfo) => {

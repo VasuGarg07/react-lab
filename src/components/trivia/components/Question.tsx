@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Question } from "@shared/interface";
-import ErrorMessage from "./ErrorMessage";
+import ErrorMessage from "../../ErrorMessage";
 import '@styles/popup-quiz/Question.scss'
 
 interface QuestionProps {
