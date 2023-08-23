@@ -1,7 +1,9 @@
-import { CardType } from "@shared/memory-game.utils"
+import { CardType, GameMode } from "@shared/memory-game.utils"
 import { Card } from "./Card"
+import { useMemoryContext } from "@contexts/memory.context"
 
 type Props = {
+  difficulty: string,
   cards: CardType[],
   firstChoice: CardType | null,
   secondChoice: CardType | null,
@@ -9,10 +11,18 @@ type Props = {
   handleChoice: (card: CardType) => void
 }
 
-export const Game = ({ cards, firstChoice, secondChoice, interaction, handleChoice }: Props) => {
+const CardGrid = () => {
+
+  const { cards, difficulty, firstChoice, secondChoice, interaction, handleChoice }: Props = useMemoryContext();
+
+  function gridSize() {
+    return difficulty == GameMode.Easy ? 6 : 8
+  }
 
   return (
-    <div className="card-grid">
+    <div className="card-grid"
+      style={{ gridTemplateColumns: `repeat(${gridSize()}, 1fr)` }}
+    >
       {cards.map(card => (
         <Card
           key={card.id}
@@ -25,3 +35,4 @@ export const Game = ({ cards, firstChoice, secondChoice, interaction, handleChoi
     </div>
   )
 }
+export default CardGrid

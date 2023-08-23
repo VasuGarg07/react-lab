@@ -28,11 +28,11 @@ const Search = () => {
     <form onSubmit={handleSubmit} className='search-container flex-centered-container-vr'>
       <input className='input' type="text"
         placeholder='Looking for a meal?' onChange={handleChange} />
-      <Button type="submit" variant='contained' color='success' size='small'
+      <Button type="submit" variant='contained' color='error' size='small'
         disableElevation startIcon={<SearchIcon />}>
         <span className='btn-text'>Search Meal</span>
       </Button>
-      <Button variant='outlined' color='success' size='small'
+      <Button variant='outlined' color='error' size='small'
         startIcon={<StarOutlineRoundedIcon />} onClick={handleRandomMeal}>
         <span className='btn-text'>Surprise Me !</span>
       </Button>

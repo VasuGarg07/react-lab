@@ -1,18 +1,22 @@
 import ErrorMessage from "@components/ErrorMessage"
+import { useMemoryContext } from "@contexts/memory.context";
 import { Button, TextField, Typography } from "@mui/material";
 import { CardType, GameMode, GameState, loadCards } from "@shared/memory-game.utils";
 import { useState } from "react";
 
 type Props = {
   name: string,
+  difficulty: GameMode | undefined
   setName: React.Dispatch<React.SetStateAction<string>>,
+  setDifficulty: React.Dispatch<React.SetStateAction<GameMode | undefined>>,
   setCards: React.Dispatch<React.SetStateAction<CardType[]>>
   setGameState: React.Dispatch<React.SetStateAction<GameState>>
 }
 
-const Difficulty = ({ name, setName, setCards, setGameState }: Props) => {
+const Difficulty = () => {
 
-  const [difficulty, setDifficulty] = useState<GameMode>();
+  const { name, difficulty, setName, setDifficulty, setCards, setGameState }: Props = useMemoryContext()
+
   const [error, setError] = useState(false);
 
   const handleSubmit = async () => {
@@ -23,7 +27,7 @@ const Difficulty = ({ name, setName, setCards, setGameState }: Props) => {
       setError(false);
       switch (difficulty) {
         case GameMode.Easy:
-          setCards(loadCards(4));
+          setCards(loadCards(6));
           break;
         case GameMode.Medium:
           setCards(loadCards(8));

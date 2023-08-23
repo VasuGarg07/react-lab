@@ -1,3 +1,4 @@
+import { useMemoryContext } from "@contexts/memory.context"
 import { Button } from "@mui/material"
 
 type Props = {
@@ -6,7 +7,8 @@ type Props = {
   resetGame: () => void,
 }
 
-const Result = ({ name, turns, resetGame }: Props) => {
+const Result = () => {
+  const { name, turns, resetGame }: Props = useMemoryContext();
   return (
     <div className="game-result flex-centered-container">
       <div className="image-container">

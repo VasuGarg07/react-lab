@@ -36,7 +36,7 @@ const DrinkCard = ({ drink }: cardProps) => {
               <Typography variant="h6" component="div"> {drink.name} </Typography>
               <Typography noWrap variant="body2" color="text.secondary"> {drink.category} - {drink.type} </Typography>
             </div>
-            <IconButton className="favorite-btn" size="large" color="success" onClick={() => handleAddtoFavorites(drink.id)}>
+            <IconButton className="favorite-btn" size="large" color="error" onClick={() => handleAddtoFavorites(drink.id)}>
               <FavoriteBorderIcon />
             </IconButton>
           </div>

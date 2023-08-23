@@ -15,7 +15,7 @@ import ShadowGenerator from './pages/ShadowGenerator.tsx';
 import { CookBookProvider } from '@contexts/cookboox.context.tsx';
 import { BudgetProvider } from '@contexts/budget.context.tsx';
 import Mortage from '@pages/Mortage.tsx';
-import MemoryGame from '@pages/MemoryGame.tsx';
+import { MemoryProvider } from '@contexts/memory.context.tsx';
 
 
 const router = createBrowserRouter([
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/memory',
-    element: <MemoryGame />
+    element: <MemoryProvider />
   }
 ]);
 
