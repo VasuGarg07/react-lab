@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 .navbar {
-  box-shadow: 0 2px 8px #ccc;
+  box-shadow: 0 2px 8px #999999;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  position: relative;
 
   .app-name {
     font-family: 'Poppins', sans-serif;
@@ -15,9 +17,10 @@
 }
 
 .budget-container {
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   align-items: stretch;
   gap: 16px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 
   .section-sm {
     width: 400px;
