@@ -1,11 +1,11 @@
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded'; import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
+import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
+import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 import LanguageIcon from '@mui/icons-material/Language';
 import AbcIcon from '@mui/icons-material/Abc';
-import EggOutlinedIcon from '@mui/icons-material/EggOutlined';
+// import EggOutlinedIcon from '@mui/icons-material/EggOutlined';
 
 import { useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ const AppBar = () => {
   return (
     <div className='flex-centered-container padding food-nav full-width'>
       <LocalDiningIcon fontSize='large' color='error' className='logo' />
-      <Typography variant='h4' className='title'>COOKBOOK</Typography>
+      <Typography variant='h4' className='title' onClick={() => { navigate('/cookbook') }}>COOKBOOK</Typography>
       <span className='spacer'></span>
       <IconButton className='action-btn' onClick={(event) => handleOpenPopover(event, Component.SearchBar)}>
         <SearchIcon fontSize='large' className='logo' />
@@ -111,28 +111,25 @@ const NavMenu = ({ navigate, handleClosePopover }: ComponentProps) => {
   return (
     <Paper sx={{ width: 200, maxWidth: '100%' }}>
       <MenuList>
-        <MenuItem onClick={() => { handleClick('') }}>
-          <ListItemIcon children={<HomeOutlinedIcon />} />
-          <ListItemText children='Home' />
-        </MenuItem>
         <MenuItem onClick={() => { handleClick('category') }}>
-          <ListItemIcon children={<CategoryOutlinedIcon />} />
+          <ListItemIcon children={<CategoryOutlinedIcon color='info' />} />
           <ListItemText children='Categories' />
         </MenuItem>
         <MenuItem onClick={() => { handleClick('area') }}>
-          <ListItemIcon children={<LanguageIcon />} />
+          <ListItemIcon children={<LanguageIcon color='info' />} />
           <ListItemText children='Regional Dishes' />
         </MenuItem>
         <MenuItem onClick={() => { handleClick('alphabet') }}>
-          <ListItemIcon children={<AbcIcon />} />
+          <ListItemIcon children={<AbcIcon color='info' />} />
           <ListItemText children='Alphabetical' />
         </MenuItem>
+        {/* TODO:  INGREDIENTS */}
         {/* <MenuItem onClick={() => { handleClick('ingredient') }}>
-          <ListItemIcon children={<EggOutlinedIcon />} />
+          <ListItemIcon children={<EggOutlinedIcon color='info' />} />
           <ListItemText children='Ingredients' />
         </MenuItem> */}
         <MenuItem onClick={() => { handleClick('random') }}>
-          <ListItemIcon children={<StarBorderRoundedIcon />} />
+          <ListItemIcon children={<StarBorderRoundedIcon color='info' />} />
           <ListItemText children='Surprise Me!' />
         </MenuItem>
       </MenuList>

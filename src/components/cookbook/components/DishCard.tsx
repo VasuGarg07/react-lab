@@ -27,9 +27,9 @@ const DishCard = ({ dish }: cardProps) => {
                 <Typography variant="h6" component="div" noWrap className="dish-name"> {dish.name} </Typography>
                 {/* <Typography noWrap variant="body2" color="text.secondary" className="sub-text"> {dish.category} - {dish.area} </Typography> */}
               </div>
-              <IconButton className="favorite-btn" color="primary">
-                <MenuBookIcon />
-              </IconButton>
+              {/* <IconButton className="favorite-btn" color="primary"> */}
+              <MenuBookIcon color="primary" />
+              {/* </IconButton> */}
             </div>
           </CardContent>
         </CardActionArea>

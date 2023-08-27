@@ -21,6 +21,7 @@ import { areaDishes, categoryDishes, dishInfoLoader, fetchAreas, fetchCategories
 import Home from '@components/cookbook/pages/Home.tsx';
 import TypeGrid from '@components/cookbook/pages/TypeGrid.tsx';
 import DishGrid from '@components/cookbook/pages/DishGrid.tsx';
+import Dictionary from '@components/cookbook/pages/Dictionary.tsx';
 
 
 const router = createBrowserRouter([
@@ -110,9 +111,19 @@ const router = createBrowserRouter([
         element: <DishGrid />,
         loader: areaDishes,
       },
+      {
+        path: 'alphabet',
+        element: <Dictionary />,
+      },
       // {
-      //   path: 'ingredients',
-      //   element: <TypeGrid />
+      //   path: 'ingredient',
+      //   element: <TypeGrid />,
+      //   loader: areaDishes,
+      // },
+      // {
+      //   path: 'ingredient/:ingredient',
+      //   element: <DishGrid />,
+      //   loader: areaDishes,
       // },
       {
         path: 'dish/:dishId',

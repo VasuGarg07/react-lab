@@ -39,15 +39,15 @@ export const dishInfoLoader = async ({ params }: LoaderFunctionArgs) => {
 
 const fetchDishes = async (url: string) => {
   const { data } = await axios.get(url);
-  const dishes: Dish[] = data.meals.map((meal: any) => {
+  const dishes: Dish[] = data.meals ? data.meals.map((meal: any) => {
     return {
       id: meal.idMeal,
       name: meal.strMeal,
       image: meal.strMealThumb,
-      // category: meal.strCategory,
-      // area: meal.strArea,
+      category: meal.strCategory,
+      area: meal.strArea,
     }
-  })
+  }) : []
   return dishes
 }
 
@@ -55,6 +55,14 @@ export const searchDishLoader = async ({ params }: LoaderFunctionArgs) => {
   const url = `${BaseUrl}search.php?s=${params.searchTerm}`;
   const dishes = await fetchDishes(url)
   const title = `Found ${dishes.length} results for "${params.searchTerm}"...`;
+  return { title, dishes }
+}
+
+
+export const alphabetDishes = async (letter: string) => {
+  const url = `${BaseUrl}search.php?f=${letter}`;
+  const dishes = await fetchDishes(url)
+  const title = `Found ${dishes.length} dishes...`;
   return { title, dishes }
 }
 
@@ -71,7 +79,6 @@ export const areaDishes = async ({ params }: LoaderFunctionArgs) => {
   const title = `Found ${dishes.length} "${params.area}" dishes...`;
   return { title, dishes }
 }
-
 
 export const fetchCategories = async () => {
   const { data } = await axios.get(`${BaseUrl}list.php?c=list`);

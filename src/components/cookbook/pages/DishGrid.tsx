@@ -9,8 +9,8 @@ interface Data {
   dishes: Dish[]
 }
 
-const DishGrid = () => {
-  const { title, dishes } = useLoaderData() as Data;
+const DishGrid = (props: Partial<Data>) => {
+  const { title, dishes } = props.title && props.dishes ? props : useLoaderData() as Data;
 
   if (dishes && dishes.length) {
     return (
@@ -29,8 +29,9 @@ const DishGrid = () => {
     )
   } else {
     return (
-      <div className='loading text-center'>
-        <Typography variant="h6" component="div"> No Meals Matched Your Search. Please Try Again. </Typography>
+      <div className='no-results text-center flex-centered-column'>
+        <img src="/images/no-food.png" alt="no results found" />
+        <Typography variant="h6" className="message"> No Dishes Matched Your Search.</Typography>
       </div>
     )
   }

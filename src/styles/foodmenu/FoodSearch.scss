@@ -11,6 +11,8 @@
 
   .title {
     font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    user-select: none;
   }
 
   .action-btn {

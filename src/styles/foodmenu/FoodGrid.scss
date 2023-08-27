@@ -30,6 +30,15 @@
   }
 }
 
-.loading {
-  padding: 32px;
+.no-results {
+  justify-content: center;
+
+  img {
+    width: min(400px, 100vh);
+  }
+
+  .message {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+  }
 }

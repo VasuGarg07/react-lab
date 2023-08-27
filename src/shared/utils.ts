@@ -99,4 +99,15 @@ export namespace Utils {
   export const fixInt = (num: number): number => {
     return parseFloat(num.toFixed(0))
   }
+
+  // FoodMenu
+  export const getAlphabets = () => {
+    const alphabets: string[] = [];
+
+    for (let charCode = 65; charCode <= 90; charCode++) {
+      alphabets.push(String.fromCharCode(charCode));
+    }
+
+    return alphabets;
+  }
 }

@@ -38,11 +38,11 @@ export interface Dish {
   id: string,
   name: string,
   image: string,
+  category: string,
+  area: string,
 }
 
 export interface DishInfo extends Dish {
-  category: string,
-  area: string,
   tags: string,
   instructions: string[],
   ingredients: string[],
