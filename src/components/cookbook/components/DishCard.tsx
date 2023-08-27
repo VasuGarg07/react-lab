@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import { Dish } from "@shared/interface";
 import '@styles/foodmenu/FoodCard.scss';
 import { useNavigate } from "react-router-dom";
@@ -15,22 +15,24 @@ const DishCard = ({ dish }: cardProps) => {
   return (
     <>
       <Card className="food-card">
-        <CardMedia
-          component="img"
-          image={dish.image}
-        />
-        <CardContent className="card-content">
-          <div className="flex-justified">
-            <div className="text-wrap">
-              <Typography variant="h6" component="div" noWrap> {dish.name} </Typography>
-              <Typography noWrap variant="body2" color="text.secondary"> {dish.category} - {dish.area} </Typography>
+        <CardActionArea
+          onClick={() => navigate(`/cookbook/dish/${dish.id}`)}>
+          <CardMedia
+            component="img"
+            image={dish.image}
+          />
+          <CardContent className="card-content">
+            <div className="flex-justified">
+              <div className="text-wrap">
+                <Typography variant="h6" component="div" noWrap className="dish-name"> {dish.name} </Typography>
+                {/* <Typography noWrap variant="body2" color="text.secondary" className="sub-text"> {dish.category} - {dish.area} </Typography> */}
+              </div>
+              <IconButton className="favorite-btn" color="primary">
+                <MenuBookIcon />
+              </IconButton>
             </div>
-            <IconButton className="favorite-btn" color="error"
-              onClick={() => navigate(`/cookbook/dish/${dish.id}`)}>
-              <MenuBookIcon />
-            </IconButton>
-          </div>
-        </CardContent>
+          </CardContent>
+        </CardActionArea>
       </Card>
     </>
   )

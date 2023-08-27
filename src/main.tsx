@@ -17,10 +17,10 @@ import Mortage from '@pages/Mortage.tsx';
 import { MemoryProvider } from '@contexts/memory.context.tsx';
 import CookBook from '@pages/Cookbook.tsx';
 import { DishDetails } from '@components/cookbook/pages/DishDetails.tsx';
-import { dishInfoLoader, searchDishLoader } from './services/cookbook.service.ts';
+import { areaDishes, categoryDishes, dishInfoLoader, fetchAreas, fetchCategories, searchDishLoader } from './services/cookbook.service.ts';
 import Home from '@components/cookbook/pages/Home.tsx';
 import TypeGrid from '@components/cookbook/pages/TypeGrid.tsx';
-import DishGrid from '@components/cookbook/pages/DishlGrid.tsx';
+import DishGrid from '@components/cookbook/pages/DishGrid.tsx';
 
 
 const router = createBrowserRouter([
@@ -90,14 +90,26 @@ const router = createBrowserRouter([
         element: <DishGrid />,
         loader: searchDishLoader,
       },
-      // {
-      //   path: 'category',
-      //   element: <TypeGrid />
-      // },
-      // {
-      //   path: 'area',
-      //   element: <TypeGrid />
-      // },
+      {
+        path: 'category',
+        element: <TypeGrid />,
+        loader: fetchCategories,
+      },
+      {
+        path: 'category/:category',
+        element: <DishGrid />,
+        loader: categoryDishes,
+      },
+      {
+        path: 'area',
+        element: <TypeGrid />,
+        loader: fetchAreas,
+      },
+      {
+        path: 'area/:area',
+        element: <DishGrid />,
+        loader: areaDishes,
+      },
       // {
       //   path: 'ingredients',
       //   element: <TypeGrid />

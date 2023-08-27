@@ -15,11 +15,11 @@ const DishGrid = () => {
   if (dishes && dishes.length) {
     return (
       <section className='foodgrid-container'>
-        <Typography variant="h5" gutterBottom> {title} </Typography>
+        <Typography className='page-title' variant="h4" gutterBottom> {title} </Typography>
         <Grid container spacing={{ md: 4, sm: 3, xs: 3 }} className='drinks-panel'>
           {dishes.map((dish: Dish) => {
             return (
-              <Grid item key={dish.id} xs={12} sm={6} md={4}>
+              <Grid item key={dish.id} xs={6} sm={4}>
                 <DishCard dish={dish} />
               </Grid>
             )

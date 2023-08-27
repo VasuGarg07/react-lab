@@ -44,8 +44,8 @@ const fetchDishes = async (url: string) => {
       id: meal.idMeal,
       name: meal.strMeal,
       image: meal.strMealThumb,
-      category: meal.strCategory,
-      area: meal.strArea,
+      // category: meal.strCategory,
+      // area: meal.strArea,
     }
   })
   return dishes
@@ -54,7 +54,39 @@ const fetchDishes = async (url: string) => {
 export const searchDishLoader = async ({ params }: LoaderFunctionArgs) => {
   const url = `${BaseUrl}search.php?s=${params.searchTerm}`;
   const dishes = await fetchDishes(url)
-  const title = `Found ${dishes.length} results for "${params.searchTerm}"`;
+  const title = `Found ${dishes.length} results for "${params.searchTerm}"...`;
   return { title, dishes }
 }
 
+export const categoryDishes = async ({ params }: LoaderFunctionArgs) => {
+  const url = `${BaseUrl}filter.php?c=${params.category}`;
+  const dishes = await fetchDishes(url)
+  const title = `Found ${dishes.length} dishes in "${params.category}"...`;
+  return { title, dishes }
+}
+
+export const areaDishes = async ({ params }: LoaderFunctionArgs) => {
+  const url = `${BaseUrl}filter.php?a=${params.area}`;
+  const dishes = await fetchDishes(url)
+  const title = `Found ${dishes.length} "${params.area}" dishes...`;
+  return { title, dishes }
+}
+
+
+export const fetchCategories = async () => {
+  const { data } = await axios.get(`${BaseUrl}list.php?c=list`);
+  const tags: string[] = data.meals.map((meal: any) => meal.strCategory)
+  return { key: 'category', title: 'Select dish category!', tags }
+}
+
+export const fetchAreas = async () => {
+  const { data } = await axios.get(`${BaseUrl}list.php?a=list`);
+  const tags: string[] = data.meals.map((meal: any) => meal.strArea)
+  return { key: 'area', title: 'Browse through regions...', tags }
+}
+
+// export const fetchIngredients = async () => {
+//   const { data } = await axios.get(`${BaseUrl}list.php?i=list`);
+//   const tags: string[] = data.meals.map((meal: any) => meal.strIngredient)
+//   return tags
+// }

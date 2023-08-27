@@ -127,10 +127,10 @@ const NavMenu = ({ navigate, handleClosePopover }: ComponentProps) => {
           <ListItemIcon children={<AbcIcon />} />
           <ListItemText children='Alphabetical' />
         </MenuItem>
-        <MenuItem onClick={() => { handleClick('ingredient') }}>
+        {/* <MenuItem onClick={() => { handleClick('ingredient') }}>
           <ListItemIcon children={<EggOutlinedIcon />} />
           <ListItemText children='Ingredients' />
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem onClick={() => { handleClick('random') }}>
           <ListItemIcon children={<StarBorderRoundedIcon />} />
           <ListItemText children='Surprise Me!' />

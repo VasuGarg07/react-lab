@@ -29,12 +29,12 @@ export const DishDetails = () => {
 
         <div className='actions flex-centered-container'>
           <Typography variant='button' className='sub-text'>
-            Region: <span className='navlink' onClick={() => navigate(`/cookbook/area/${dish.area}`)}>
+            Region: <span className='navlink' onClick={() => navigate(`/cookbook/area/${dish.area?.toLocaleLowerCase()}`)}>
               {dish.area}
             </span>
           </Typography>
           <Typography variant='button' className='sub-text'>
-            Category: <span className='navlink' onClick={() => navigate(`/cookbook/category${dish.category}`)}>
+            Category: <span className='navlink' onClick={() => navigate(`/cookbook/category/${dish.category?.toLocaleLowerCase()}`)}>
               {dish.category}
             </span>
           </Typography>
@@ -65,7 +65,7 @@ export const DishDetails = () => {
       <div className='section padding'>
         <Typography variant='h4' className='section-name'>Ingredients</Typography>
         <div className='ingredients flex-centered-container-vr'>
-          {dish.ingredients.map(ingredient => <div className='ingredient' key={ingredient}>{ingredient}</div>)}
+          {dish.ingredients.map((ingredient, index) => <div className='ingredient' key={index}>{ingredient}</div>)}
         </div>
       </div>
       <div className='section padding'>
