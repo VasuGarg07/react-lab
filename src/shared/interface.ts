@@ -34,16 +34,20 @@ export type Drink = {
 }
 
 // Cookbook
-export type Meal = {
+export interface Dish {
   id: string,
   name: string,
   image: string,
   category: string,
   area: string,
-  tags: string
-  source: string,
-  instructions: string,
-  ingredients: string[]
+}
+
+export interface DishInfo extends Dish {
+  tags: string,
+  instructions: string[],
+  ingredients: string[],
+  source?: string,
+  youtube?: string
 }
 
 // Budget Buddy

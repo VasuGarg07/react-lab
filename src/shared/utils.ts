@@ -1,6 +1,18 @@
 import { TableCell, TableRow, styled, tableCellClasses } from "@mui/material";
-import { CHART_COLORS } from "./data";
 import { Aggregate, ExpenseType, Transaction } from "./interface";
+
+export const CHART_COLORS = [
+  '#FF5733',
+  '#28C744',
+  '#5733FF',
+  '#FF33BE',
+  '#33D9FF',
+  '#FFC300',
+  '#EC0A0A',
+  '#01CFAD',
+  '#B633FF',
+  '#0088EE',
+];
 
 export namespace Utils {
   // COLOR GEN

@@ -12,10 +12,15 @@ import App from './pages/App.tsx';
 import ColorGen from './pages/ColorGen.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
-import { CookBookProvider } from '@contexts/cookboox.context.tsx';
 import { BudgetProvider } from '@contexts/budget.context.tsx';
 import Mortage from '@pages/Mortage.tsx';
 import { MemoryProvider } from '@contexts/memory.context.tsx';
+import CookBook from '@pages/Cookbook.tsx';
+import { DishDetails } from '@components/cookbook/pages/DishDetails.tsx';
+import { dishInfoLoader, searchDishLoader } from './services/cookbook.service.ts';
+import Home from '@components/cookbook/pages/Home.tsx';
+import TypeGrid from '@components/cookbook/pages/TypeGrid.tsx';
+import DishGrid from '@components/cookbook/pages/DishlGrid.tsx';
 
 
 const router = createBrowserRouter([
@@ -25,7 +30,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: "/aniquote",
+    path: "aniquote",
     element: <AniQuote />,
   },
   {
@@ -37,12 +42,24 @@ const router = createBrowserRouter([
     element: <ColorGen />,
   },
   {
+    path: "/budget",
+    element: <BudgetProvider />,
+  },
+  {
+    path: "/mortage",
+    element: <Mortage />,
+  },
+  {
+    path: '/memory',
+    element: <MemoryProvider />
+  },
+  {
     path: "/trivia",
     element: <QuizProvider />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/trivia",
+        path: "",
         element: <SetupQuiz />
       },
       {
@@ -61,20 +78,42 @@ const router = createBrowserRouter([
   },
   {
     path: "/cookbook",
-    element: <CookBookProvider />,
+    element: <CookBook />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '',
+        element: <Home />
+      },
+      {
+        path: 'search/:searchTerm',
+        element: <DishGrid />,
+        loader: searchDishLoader,
+      },
+      // {
+      //   path: 'category',
+      //   element: <TypeGrid />
+      // },
+      // {
+      //   path: 'area',
+      //   element: <TypeGrid />
+      // },
+      // {
+      //   path: 'ingredients',
+      //   element: <TypeGrid />
+      // },
+      {
+        path: 'dish/:dishId',
+        element: <DishDetails />,
+        loader: dishInfoLoader,
+      },
+      {
+        path: "random",
+        element: <DishDetails />,
+        loader: dishInfoLoader,
+      },
+    ],
   },
-  {
-    path: "/budget",
-    element: <BudgetProvider />,
-  },
-  {
-    path: "/mortage",
-    element: <Mortage />,
-  },
-  {
-    path: '/memory',
-    element: <MemoryProvider />
-  }
 ]);
 
 

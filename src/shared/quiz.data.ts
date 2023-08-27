@@ -29,16 +29,3 @@ export const QuizCategories = [
 ];
 
 export const QuizAPi = 'https://opentdb.com/api.php?amount=10';
-
-export const CHART_COLORS = [
-  '#FF5733',
-  '#28C744',
-  '#5733FF',
-  '#FF33BE',
-  '#33D9FF',
-  '#FFC300',
-  '#EC0A0A',
-  '#01CFAD',
-  '#B633FF',
-  '#0088EE',
-];

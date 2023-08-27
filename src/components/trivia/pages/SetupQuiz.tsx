@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, MenuItem, TextField } from '@mui/material';
-import { QuizAPi, QuizCategories } from '@shared/data';
+import { QuizAPi, QuizCategories } from '@shared/quiz.data';
 import { Question } from '@shared/interface';
 import axios from 'axios';
 import ErrorMessage from '../../ErrorMessage';

@@ -1,18 +1,15 @@
+import AppBar from '@components/cookbook/components/AppBar';
+import { Outlet } from 'react-router-dom';
+import '@styles/Cookbook.scss';
 
-import Favorites from '@components/cookbook/Favorites';
-import Meals from '@components/cookbook/Meals';
-import Search from '@components/cookbook/Search';
-import { useCookBookContext } from '@contexts/cookboox.context';
-
-export default function App() {
-
-  const { favorites } = useCookBookContext()
+export default function CookBook() {
 
   return (
-    <main>
-      <Search />
-      {favorites && favorites.length > 0 && <Favorites favorites={favorites} />}
-      <Meals />
-    </main>
+    <>
+      <AppBar />
+      <div className='outlet'>
+        <Outlet />
+      </div>
+    </>
   )
 }
