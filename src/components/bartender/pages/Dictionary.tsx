@@ -1,10 +1,10 @@
-import { Dish } from '@shared/interface';
+import { Button } from '@mui/material';
+import { Drink } from '@shared/interface';
 import { Utils } from '@shared/utils';
 import '@styles/foodmenu/Dictionary.scss';
 import { useEffect, useState } from 'react';
-import { alphabetDishes } from '@services/cookbook.service';
-import DishGrid from './DishGrid';
-import { Button } from '@mui/material';
+import DrinkGrid from './DrinkGrid';
+import { alphabetDrinks } from '@services/bartender.service';
 
 const CHARS = Utils.getAlphabets();
 
@@ -12,18 +12,18 @@ const CHARS = Utils.getAlphabets();
 const Dictionary = () => {
 
   const [currentChar, setCurrentChar] = useState(CHARS[0]);
-  const [dishes, setDishes] = useState<Dish[]>([]);
+  const [drinks, setDrinks] = useState<Drink[]>([]);
   const [title, setTitle] = useState('');
   const [error, setError] = useState(false);
   const [_, setLoading] = useState(false)
 
 
-  async function fetchDishes(char: string) {
+  async function fetchDrinks(char: string) {
     setLoading(true);
     try {
-      const { title, dishes } = await alphabetDishes(char)
+      const { title, drinks } = await alphabetDrinks(char)
       setTitle(title);
-      setDishes(dishes);
+      setDrinks(drinks);
       setError(false);
     } catch (error) {
       setError(true);
@@ -34,13 +34,10 @@ const Dictionary = () => {
 
   const handleSelect = (char: string) => {
     setCurrentChar(char);
-    fetchDishes(char)
+    fetchDrinks(char)
   }
 
-  useEffect(() => {
-    fetchDishes(currentChar);
-    console.log(title, dishes)
-  }, [currentChar])
+  useEffect(() => { fetchDrinks(currentChar) }, [currentChar])
 
   return (
     <>
@@ -49,7 +46,7 @@ const Dictionary = () => {
           return <Button
             key={char}
             variant={`${currentChar == char ? 'contained' : 'outlined'}`}
-            color='success'
+            color='warning'
             size='small'
             className='key'
             children={char.toUpperCase()}
@@ -57,7 +54,7 @@ const Dictionary = () => {
           />
         })}
       </div>
-      {!error && <DishGrid title={title} dishes={dishes} />}
+      {!error && <DrinkGrid title={title} drinks={drinks} />}
     </>
   )
 }

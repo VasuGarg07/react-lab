@@ -22,14 +22,17 @@ export interface Question {
 }
 
 // Bartender
-export type Drink = {
+export interface Drink {
   id: string,
   name: string,
   image: string,
   category: string,
   type: string,
+}
+
+export interface DrinkInfo extends Drink {
   glass: string,
-  instructions: string,
+  instructions: string[],
   ingredients: string[]
 }
 

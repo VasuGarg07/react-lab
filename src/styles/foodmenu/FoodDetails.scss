@@ -36,6 +36,10 @@
       }
     }
 
+    .drink-actions .navlink {
+      color: #9c27b0;
+    }
+
     .section-name {
       font-family: 'Poiret One', cursive;
       text-transform: uppercase;
@@ -55,6 +59,10 @@
         border-radius: 8px;
         text-transform: capitalize;
       }
+    }
+
+    .drink-ing .ingredient {
+      background-color: #9c27b0;
     }
 
     .instructions {

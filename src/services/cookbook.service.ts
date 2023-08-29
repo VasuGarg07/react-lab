@@ -9,8 +9,6 @@ export const dishInfoLoader = async ({ params }: LoaderFunctionArgs) => {
 
   const { data } = await axios.get(url);
 
-  console.log(data)
-
   const dish: DishInfo = {
     id: data.meals[0].idMeal,
     name: data.meals[0].strMeal,
@@ -26,7 +24,6 @@ export const dishInfoLoader = async ({ params }: LoaderFunctionArgs) => {
       .split('.'),
     ingredients: [],
   }
-  console.log(dish)
 
   for (let i = 1; i <= 20; i++) {
     if (data.meals[0][`strIngredient${i}`]) {
@@ -57,7 +54,6 @@ export const searchDishLoader = async ({ params }: LoaderFunctionArgs) => {
   const title = `Found ${dishes.length} results for "${params.searchTerm}"...`;
   return { title, dishes }
 }
-
 
 export const alphabetDishes = async (letter: string) => {
   const url = `${BaseUrl}search.php?f=${letter}`;

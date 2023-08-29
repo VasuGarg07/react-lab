@@ -1,18 +1,15 @@
-
-import Drinks from '@components/bartender/Drinks';
-import Favorites from '@components/bartender/Favorites';
-import Search from '@components/bartender/Search';
-import { useBartenderContext } from '@contexts/bartender.context';
+import AppBar from "@components/bartender/components/AppBar";
+import { Outlet } from "react-router-dom";
+import '@styles/Cookbook.scss';
 
 export default function App() {
 
-  const { favorites } = useBartenderContext()
-
   return (
-    <main>
-      <Search />
-      {favorites && favorites.length > 0 && <Favorites favorites={favorites} />}
-      <Drinks />
-    </main>
+    <>
+      <AppBar />
+      <div className='outlet'>
+        <Outlet />
+      </div>
+    </>
   )
 }
