@@ -1,33 +1,33 @@
+import DrinkDictionary from '@components/bartender/pages/Dictionary.tsx';
+import { DrinkDetails } from '@components/bartender/pages/DrinkDetails.tsx';
+import DrinkGrid from '@components/bartender/pages/DrinkGrid.tsx';
+import DrinkHome from '@components/bartender/pages/Home.tsx';
+import DrinkTypeGrid from '@components/bartender/pages/TypeGrid.tsx';
+import Dictionary from '@components/cookbook/pages/Dictionary.tsx';
+import { DishDetails } from '@components/cookbook/pages/DishDetails.tsx';
+import DishGrid from '@components/cookbook/pages/DishGrid.tsx';
+import DishHome from '@components/cookbook/pages/Home.tsx';
+import DishTypeGrid from '@components/cookbook/pages/TypeGrid.tsx';
+import { BudgetProvider } from '@contexts/budget.context.tsx';
+import { MemoryProvider } from '@contexts/memory.context.tsx';
 import { CssBaseline } from '@mui/material';
+import Bartender from '@pages/Bartender.tsx';
+import CookBook from '@pages/Cookbook.tsx';
+import Mortage from '@pages/Mortage.tsx';
+import { categoryDrinks, drinkInfoLoader, fetchDrinkCategories, fetchGlass, fetchTypes, glassDrinks, searchDrinkLoader, typeDrinks } from '@services/bartender.service.ts';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, ScrollRestoration, createBrowserRouter } from 'react-router-dom';
 import Result from './components/trivia/pages/Result.tsx';
 import SetupQuiz from './components/trivia/pages/SetupQuiz.tsx';
 import Trivia from './components/trivia/pages/Trivia.tsx';
-import { BartenderProvider } from './contexts/bartender.context.tsx';
 import { QuizProvider } from './contexts/quiz.context.tsx';
 import AniQuote from './pages/AniQuote.tsx';
 import App from './pages/App.tsx';
 import ColorGen from './pages/ColorGen.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
-import { BudgetProvider } from '@contexts/budget.context.tsx';
-import Mortage from '@pages/Mortage.tsx';
-import { MemoryProvider } from '@contexts/memory.context.tsx';
-import CookBook from '@pages/Cookbook.tsx';
-import { DishDetails } from '@components/cookbook/pages/DishDetails.tsx';
-import { DrinkDetails } from '@components/bartender/pages/DrinkDetails.tsx';
 import { areaDishes, categoryDishes, dishInfoLoader, fetchAreas, fetchCategories, searchDishLoader } from './services/cookbook.service.ts';
-import DishHome from '@components/cookbook/pages/Home.tsx';
-import DishTypeGrid from '@components/cookbook/pages/TypeGrid.tsx';
-import DishGrid from '@components/cookbook/pages/DishGrid.tsx';
-import DrinkHome from '@components/bartender/pages/Home.tsx';
-import Dictionary from '@components/cookbook/pages/Dictionary.tsx';
-import DrinkTypeGrid from '@components/bartender/pages/TypeGrid.tsx';
-import DrinkDictionary from '@components/bartender/pages/Dictionary.tsx';
-import DrinkGrid from '@components/bartender/pages/DrinkGrid.tsx';
-import { categoryDrinks, drinkInfoLoader, fetchDrinkCategories, fetchGlass, fetchTypes, glassDrinks, searchDrinkLoader, typeDrinks } from '@services/bartender.service.ts';
 
 
 const router = createBrowserRouter([
@@ -81,7 +81,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/bartender",
-    element: <BartenderProvider />,
+    element: <>
+      <ScrollRestoration />
+      <Bartender />
+    </>,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -141,7 +144,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/cookbook",
-    element: <CookBook />,
+    element: <>
+      <ScrollRestoration />
+      <CookBook />
+    </>,
     errorElement: <ErrorPage />,
     children: [
       {

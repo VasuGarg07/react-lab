@@ -11,7 +11,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='introduction-container dishes-cover flex-centered-column padding text-center'>
+    <div className='introduction-container drinks-cover flex-centered-column padding text-center'>
       <Typography variant='h2' className="title">Bartender's Best</Typography>
 
       <Typography variant='h4' className="tag-line">

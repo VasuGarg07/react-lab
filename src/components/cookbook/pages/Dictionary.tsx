@@ -57,7 +57,7 @@ const Dictionary = () => {
           />
         })}
       </div>
-      {!error && <DishGrid title={title} dishes={dishes} />}
+      {!error && title && dishes && <DishGrid title={title} dishes={dishes} />}
     </>
   )
 }
