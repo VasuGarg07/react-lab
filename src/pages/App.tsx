@@ -2,19 +2,26 @@ import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
 import { Button, Card, CardActionArea, Grid, Typography } from '@mui/material';
 import { Apps } from '@shared/apps';
 import { CardInfo } from '@shared/interface';
+import { defaultTiltOptions } from '@shared/utils';
 import '@styles/App.scss';
 import { useRef } from 'react';
+import { Tilt } from 'react-tilt';
+
+
 
 const AppCard = (app: CardInfo) => {
   return (
-    <Card className='card'>
-      <CardActionArea href={app.url}>
-        <div className='full-width image-container padding'>
-          <img className='full-width' src={app.image} alt="" />
-          <Typography className='text-center app-name text-ellipsis' variant='body1'>{app.name}</Typography>
-        </div>
-      </CardActionArea>
-    </Card>
+    <Tilt options={defaultTiltOptions}>
+      <Card className='card'>
+        <CardActionArea href={app.url}>
+          <div className='full-width image-container padding'>
+            <img className='full-width' src={app.image} alt="" />
+            <Typography className='text-center app-name text-ellipsis' variant='body1'>{app.name}</Typography>
+          </div>
+        </CardActionArea>
+      </Card>
+    </Tilt>
+
   );
 }
 

@@ -1,4 +1,8 @@
 import { CardType } from "@shared/memory-game.utils";
+import { defaultTiltOptions } from "@shared/utils";
+import { Tilt } from 'react-tilt'
+
+
 
 type Props = {
   card: CardType,
@@ -14,7 +18,7 @@ export const Card = ({ card, flipped, interaction, handleChoice }: Props) => {
   }
 
   return (
-    <div className="card">
+    <Tilt options={defaultTiltOptions} className="card">
       <img
         className={`card-img  ${flipped ? 'card-front-flipped' : 'card-front'}`}
         src={card.frontImage}
@@ -30,6 +34,6 @@ export const Card = ({ card, flipped, interaction, handleChoice }: Props) => {
         width={200}
         height={200}
       />
-    </div>
+    </Tilt>
   )
 }
