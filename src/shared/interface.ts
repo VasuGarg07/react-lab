@@ -101,3 +101,9 @@ export interface MortageData {
   loanTerm: number,
   interestRate: number
 }
+
+// MovieGrove 
+export interface MovieGenre {
+  id: number;
+  name: string
+}

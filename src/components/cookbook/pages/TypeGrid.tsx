@@ -19,7 +19,7 @@ const TypeGrid = () => {
 
 
 
-  const handleClick = (tag: string) => navigate(`/cookbook/${key.toLocaleLowerCase()}/${tag.toLocaleLowerCase()}`)
+  const handleClick = (tag: string) => navigate(`${key.toLocaleLowerCase()}/${tag.toLocaleLowerCase()}`)
 
   const backgrounds = Utils.generateRandomColor(tags.length)
   return (

@@ -28,35 +28,35 @@ const Home = () => {
           startIcon={<CategoryOutlinedIcon />}
           color='secondary'
           children="Explore Categories"
-          onClick={() => navigate('/bartender/category')}
+          onClick={() => navigate('category')}
         />
 
         <Button variant="contained"
           startIcon={<LanguageIcon />}
           color='secondary'
           children="Cockatail Types"
-          onClick={() => navigate('/bartender/type')}
+          onClick={() => navigate('type')}
         />
 
         <Button variant="contained"
           startIcon={<LiquorOutlinedIcon />}
           color='secondary'
           children="Cockatail Glasses"
-          onClick={() => navigate('/bartender/glass')}
+          onClick={() => navigate('glass')}
         />
 
         <Button variant="contained"
           startIcon={<AbcIcon />}
           color='secondary'
           children="Alphabetical"
-          onClick={() => navigate('/bartender/alphabet')}
+          onClick={() => navigate('alphabet')}
         />
 
         <Button variant="contained"
           startIcon={<StarBorderRoundedIcon />}
           color='secondary'
           children="Surprise Me !"
-          onClick={() => navigate('/bartender/random')}
+          onClick={() => navigate('random')}
         />
       </div>
     </div>

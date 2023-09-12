@@ -27,28 +27,28 @@ const Home = () => {
           startIcon={<CategoryOutlinedIcon />}
           color='error'
           children="Explore Categories"
-          onClick={() => navigate('/cookbook/category')}
+          onClick={() => navigate('category')}
         />
 
         <Button variant="contained"
           startIcon={<LanguageIcon />}
           color='error'
           children="Regional Meals"
-          onClick={() => navigate('/cookbook/area')}
+          onClick={() => navigate('area')}
         />
 
         <Button variant="contained"
           startIcon={<AbcIcon />}
           color='error'
           children="Alphabetical"
-          onClick={() => navigate('/cookbook/alphabet')}
+          onClick={() => navigate('alphabet')}
         />
 
         <Button variant="contained"
           startIcon={<StarBorderRoundedIcon />}
           color='error'
           children="Surprise Me !"
-          onClick={() => navigate('/cookbook/random')}
+          onClick={() => navigate('random')}
         />
       </div>
     </div>

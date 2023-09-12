@@ -17,7 +17,7 @@ const TypeGrid = () => {
   //   return key == 'category' ? `/food-category/${tag.toLocaleLowerCase()}.jpg` : `/food-region/${tag.toLocaleLowerCase()}.jpeg`
   // }
 
-  const handleClick = (tag: string) => navigate(`/bartender/${key.toLocaleLowerCase()}/${tag.toLocaleLowerCase()}`)
+  const handleClick = (tag: string) => navigate(`${key.toLocaleLowerCase()}/${tag.toLocaleLowerCase()}`)
 
   const backgrounds = Utils.generateRandomColor(tags.length)
   return (

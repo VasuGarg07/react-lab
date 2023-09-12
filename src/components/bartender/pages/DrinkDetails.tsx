@@ -24,17 +24,17 @@ export const DrinkDetails = () => {
 
         <div className='drink-actions actions flex-centered-container'>
           <Typography variant='button' className='sub-text'>
-            Type: <span className='navlink' onClick={() => navigate(`/bartender/type/${drink.type.toLocaleLowerCase()}`)}>
+            Type: <span className='navlink' onClick={() => navigate(`type/${drink.type.toLocaleLowerCase()}`)}>
               {drink.type}
             </span>
           </Typography>
           <Typography variant='button' className='sub-text'>
-            Category: <span className='navlink' onClick={() => navigate(`/bartender/category/${drink.category.toLocaleLowerCase()}`)}>
+            Category: <span className='navlink' onClick={() => navigate(`category/${drink.category.toLocaleLowerCase()}`)}>
               {drink.category}
             </span>
           </Typography>
           <Typography variant='button' className='sub-text'>
-            Glass: <span className='navlink' onClick={() => navigate(`/bartender/glass/${drink.glass.toLocaleLowerCase()}`)}>
+            Glass: <span className='navlink' onClick={() => navigate(`glass/${drink.glass.toLocaleLowerCase()}`)}>
               {drink.glass}
             </span>
           </Typography>

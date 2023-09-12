@@ -29,12 +29,12 @@ export const DishDetails = () => {
 
         <div className='actions flex-centered-container'>
           <Typography variant='button' className='sub-text'>
-            Region: <span className='navlink' onClick={() => navigate(`/cookbook/area/${dish.area?.toLocaleLowerCase()}`)}>
+            Region: <span className='navlink' onClick={() => navigate(`area/${dish.area?.toLocaleLowerCase()}`)}>
               {dish.area}
             </span>
           </Typography>
           <Typography variant='button' className='sub-text'>
-            Category: <span className='navlink' onClick={() => navigate(`/cookbook/category/${dish.category?.toLocaleLowerCase()}`)}>
+            Category: <span className='navlink' onClick={() => navigate(`category/${dish.category?.toLocaleLowerCase()}`)}>
               {dish.category}
             </span>
           </Typography>

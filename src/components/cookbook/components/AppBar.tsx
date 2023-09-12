@@ -31,7 +31,6 @@ const AppBar = () => {
 
   const handleClosePopover = () => {
     setAnchorEl(null);
-    // setComponent(null);
   };
 
   const open = Boolean(anchorEl);
@@ -39,7 +38,7 @@ const AppBar = () => {
   return (
     <div className='flex-centered-container padding food-nav full-width'>
       <LocalDiningIcon fontSize='large' color='error' className='logo' />
-      <Typography variant='h4' className='title' onClick={() => { navigate('/cookbook') }}>COOKBOOK</Typography>
+      <Typography variant='h4' className='title' onClick={() => { navigate('') }}>COOKBOOK</Typography>
       <span className='spacer'></span>
       <IconButton className='action-btn' onClick={(event) => handleOpenPopover(event, Component.SearchBar)}>
         <SearchIcon fontSize='large' className='logo' />
@@ -86,7 +85,7 @@ const SearchBar = ({ navigate, handleClosePopover }: ComponentProps) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (text) {
-      navigate(`/cookbook/search/${text}`);
+      navigate(`search/${text}`);
       handleClosePopover();
     }
   }
@@ -104,7 +103,7 @@ const SearchBar = ({ navigate, handleClosePopover }: ComponentProps) => {
 const NavMenu = ({ navigate, handleClosePopover }: ComponentProps) => {
 
   const handleClick = (link: string) => {
-    navigate(`/cookbook/${link}`);
+    navigate(link);
     handleClosePopover();
   }
 

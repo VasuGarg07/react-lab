@@ -16,7 +16,7 @@ const DrinkCard = ({ drink }: cardProps) => {
     <>
       <Card className="food-card">
         <CardActionArea
-          onClick={() => navigate(`/bartender/drink/${drink.id}`)}>
+          onClick={() => navigate(`drink/${drink.id}`)}>
           <CardMedia
             component="img"
             image={drink.image}

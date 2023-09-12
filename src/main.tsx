@@ -8,16 +8,22 @@ import { DishDetails } from '@components/cookbook/pages/DishDetails.tsx';
 import DishGrid from '@components/cookbook/pages/DishGrid.tsx';
 import DishHome from '@components/cookbook/pages/Home.tsx';
 import DishTypeGrid from '@components/cookbook/pages/TypeGrid.tsx';
+import Genres from '@components/moviegrove/pages/Genres.tsx';
+import MovieHome from '@components/moviegrove/pages/Home.tsx';
+import Movie from '@components/moviegrove/pages/Movie.tsx';
+import Movies from '@components/moviegrove/pages/Movies.tsx';
+import SearchResults from '@components/moviegrove/pages/SearchResults.tsx';
 import { BudgetProvider } from '@contexts/budget.context.tsx';
 import { MemoryProvider } from '@contexts/memory.context.tsx';
 import { CssBaseline } from '@mui/material';
 import Bartender from '@pages/Bartender.tsx';
 import CookBook from '@pages/Cookbook.tsx';
 import Mortage from '@pages/Mortage.tsx';
+import MovieGrove from '@pages/MovieGrove.tsx';
 import { categoryDrinks, drinkInfoLoader, fetchDrinkCategories, fetchGlass, fetchTypes, glassDrinks, searchDrinkLoader, typeDrinks } from '@services/bartender.service.ts';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, ScrollRestoration, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, ScrollRestoration, createBrowserRouter, redirect } from 'react-router-dom';
 import Result from './components/trivia/pages/Result.tsx';
 import SetupQuiz from './components/trivia/pages/SetupQuiz.tsx';
 import Trivia from './components/trivia/pages/Trivia.tsx';
@@ -78,6 +84,52 @@ const router = createBrowserRouter([
         element: <Result />
       }
     ],
+  },
+  {
+    path: '/moviegrove',
+    element: <>
+      <ScrollRestoration />
+      <MovieGrove />
+    </>,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'home',
+        element: <MovieHome />
+      },
+      {
+        path: 'search/:searchTerm',
+        element: <SearchResults />
+      },
+      {
+        path: 'movies',
+        element: <Movies />
+      },
+      {
+        path: 'movie/:movieId',
+        element: <Movie />
+      },
+      {
+        path: 'series',
+        element: <Movies />
+      },
+      {
+        path: 'serie/:serieId',
+        element: <Movies />
+      },
+      {
+        path: 'genres',
+        element: <Genres />
+      },
+      {
+        path: 'genre/genreId',
+        element: <SearchResults />
+      },
+      {
+        path: '',
+        loader: () => redirect('home')
+      }
+    ]
   },
   {
     path: "/bartender",

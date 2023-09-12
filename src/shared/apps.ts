@@ -50,5 +50,10 @@ export namespace Apps {
       name: 'The Bartender',
       url: '/bartender',
     },
+    {
+      image: '/thumbs/bartender.png',
+      name: 'Movie Grove',
+      url: '/moviegrove',
+    },
   ]
 }

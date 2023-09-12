@@ -44,7 +44,7 @@ const QuestionCard = ({
 
   const handleNext = () => {
     if (currQues > questions.length - 2) {
-      navigate("/trivia/result");
+      navigate("result");
     } else if (selected) {
       setCurrQues(currQues + 1);
       setSelected('');
@@ -52,7 +52,7 @@ const QuestionCard = ({
   };
 
   const handleQuit = () => {
-    navigate('/trivia')
+    navigate('')
     setCurrQues(0);
     // setQuestions([]);
   };

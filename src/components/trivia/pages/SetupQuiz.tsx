@@ -34,7 +34,7 @@ const SetupQuiz = () => {
       setError(false);
       const resp = await fetchQuiz(category, difficulty);
       setQuestions(resp.results)
-      navigate("/trivia/quiz");
+      navigate("quiz");
     }
   };
 

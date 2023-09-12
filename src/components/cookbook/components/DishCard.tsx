@@ -16,7 +16,7 @@ const DishCard = ({ dish }: cardProps) => {
     <>
       <Card className="food-card">
         <CardActionArea
-          onClick={() => navigate(`/cookbook/dish/${dish.id}`)}>
+          onClick={() => navigate(`dish/${dish.id}`)}>
           <CardMedia
             component="img"
             image={dish.image}
