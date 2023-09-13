@@ -34,6 +34,8 @@ import ColorGen from './pages/ColorGen.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import ShadowGenerator from './pages/ShadowGenerator.tsx';
 import { areaDishes, categoryDishes, dishInfoLoader, fetchAreas, fetchCategories, searchDishLoader } from './services/cookbook.service.ts';
+import Serie from '@components/moviegrove/pages/Serie.tsx';
+import Series from '@components/moviegrove/pages/Series.tsx';
 
 
 const router = createBrowserRouter([
@@ -111,11 +113,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'series',
-        element: <Movies />
+        element: <Series />
       },
       {
         path: 'serie/:serieId',
-        element: <Movies />
+        element: <Serie />
       },
       {
         path: 'genres',

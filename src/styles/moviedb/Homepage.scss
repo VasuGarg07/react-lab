@@ -4,13 +4,6 @@
 .moviegrove-container {
   max-height: 100vh;
 
-  .movie-nav,
-  .main-content,
-  .movie-menu {
-    font-family: "Nunito", sans-serif;
-    background-color: $bg-color;
-    color: $text-color;
-  }
 
   .movie-nav {
     border-bottom: 1px solid $light-bg-color;
@@ -39,13 +32,23 @@
     height: calc(100vh - 60px);
     overflow: auto;
     padding: 32px;
+    // margin: auto;
+    // max-width: 880px;
   }
+}
+
+.moviegrove-container,
+.movie-nav,
+.main-content,
+.movie-menu {
+  font-family: "Nunito", sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
 }
 
 
 @media (max-width: 768px) {
-  .main-content {
+  .moviegrove-container .main-content {
     padding: 16px;
   }
-
 }
