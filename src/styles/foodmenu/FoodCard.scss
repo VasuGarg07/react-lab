@@ -1,0 +1,33 @@
+.food-card {
+  box-shadow:
+    0px 1.5px 2.5px rgba(0, 0, 0, 0.8),
+    0px 12px 20px rgba(0, 0, 0, 0.4) !important;
+
+  .card-content {
+    padding: 8px 12px !important;
+
+    .text-wrap {
+      width: calc(100% - 48px);
+
+      .dish-name {
+        font-family: 'Overlock', cursive;
+        font-weight: bold;
+      }
+    }
+
+    .favorite-btn:hover {
+      transform: translateY(-4px);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    box-shadow:
+      0px 1.1px 2.7px rgba(0, 0, 0, 0.72),
+      0px 3.6px 8.9px rgba(0, 0, 0, 0.48),
+      0px 16px 40px rgba(0, 0, 0, 0.12) !important;
+
+    transform: translateY(-4px);
+    transition: all 0.2s ease-in-out;
+  }
+}

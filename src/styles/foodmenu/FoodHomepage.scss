@@ -1,0 +1,34 @@
+.introduction-container {
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vh - 80px);
+  justify-content: center;
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+
+  .tag-line {
+    font-style: italic;
+    font-family: 'Overlock', cursive;
+  }
+
+  .introduction {
+    max-width: 840px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}
+
+.dishes-cover {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5)), url('/images/cookbook.jpg');
+}
+
+.drinks-cover {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5)), url('/images/bartender.jpg');
+}

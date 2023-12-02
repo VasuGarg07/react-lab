@@ -1,0 +1,103 @@
+.display-flex {
+  display: flex;
+}
+
+.flex-centered-container-vr {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flex-centered-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.flex-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.flex-justified {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.flex-stretch {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.flex-centered-column {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pad-8 {
+  padding: 8px;
+}
+
+.padding {
+  padding: 16px;
+}
+
+.margin-8 {
+  margin: 8px;
+}
+
+.margin {
+  margin: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-viewport-width {
+  width: 100vw;
+}
+
+.full-viewport-height {
+  height: 100vh;
+}
+
+.cursor-pointer:hover,
+.cursor-pointer:active {
+  cursor: pointer;
+}

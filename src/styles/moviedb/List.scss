@@ -1,0 +1,62 @@
+@import "./variables";
+
+.list-section {
+  margin-bottom: 2rem;
+
+  .section-header {
+    margin-bottom: 1rem;
+
+    .section-title .title-tag {
+      background-color: $main-color;
+      width: 8px;
+      height: 24px;
+      border-radius: 4px;
+    }
+
+    .section-title .title,
+    .section-visit-link {
+      font-family: "Inter", sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $text-secundary-color;
+    }
+
+    .section-visit-link {
+      text-decoration: none;
+      gap: 0;
+
+      &:hover,
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .section-grid {
+    display: grid;
+    gap: 24px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
+    .skeletal {
+      height: 240px;
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      border-radius: 8px;
+    }
+
+  }
+}
+
+@media (max-width: 804px) {
+  .list-section .section-grid {
+    flex-wrap: nowrap;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .skeletal {
+      min-width: 160px;
+    }
+  }
+}

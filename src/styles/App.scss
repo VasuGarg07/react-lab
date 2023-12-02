@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Overlock&display=swap');
+
+.homepage {
+  padding: 32px;
+  justify-content: center;
+
+  .intro {
+    width: 50%;
+
+    .title {
+      font-family: 'Poiret One', cursive;
+      font-weight: bold;
+    }
+
+
+    .button {
+      margin: 16px auto;
+    }
+  }
+
+
+  .image-container img {
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 320px;
+    margin: auto;
+  }
+}
+
+.showcase {
+  background-color: #e8f1f6;
+
+
+  .title {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+  }
+
+  .card {
+    .image-container img {
+      padding: 16px 0;
+    }
+
+    .app-name {
+      text-transform: uppercase;
+      font-family: 'Overlock', cursive;
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+}
+
+
+@media screen and (max-width: 699px) {
+
+  .homepage .intro .title,
+  .showcase .title {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .homepage {
+    .intro {
+      width: 100%;
+    }
+
+    .image-container {
+      display: none;
+    }
+  }
+}

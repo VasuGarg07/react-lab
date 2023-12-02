@@ -1,0 +1,27 @@
+.txn-container {
+  border-radius: 4px;
+  border: 1px solid #d5d5d5;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  overflow: auto;
+
+  .section-header {
+    margin-bottom: 16px;
+  }
+
+  .image-container {
+    height: 80%;
+    margin: auto;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .table-row:hover {
+    background-color: #c3e7ff;
+    cursor: pointer;
+  }
+}

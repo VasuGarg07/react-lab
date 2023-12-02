@@ -1,0 +1,56 @@
+@import './variables';
+
+.movie-menu {
+  width: 14rem;
+  border-right: 1px solid $light-bg-color;
+  height: calc(100vh - 60px);
+  align-items: flex-start;
+  padding: 16px;
+
+  .active {
+    background-color: rgba(transparent, 0.08);
+    border-radius: 8px;
+
+    * {
+      background-color: transparent;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    gap: 8px;
+    padding: 8px 16px;
+    color: $text-color;
+
+    &:hover,
+    &:active {
+      @extend .active;
+
+      .icon {
+        transform: rotate(360deg);
+        transition: transform .6ms ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .movie-menu {
+    width: 100%;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-evenly;
+    border-right: none;
+    border-top: 1px solid $light-bg-color;
+    padding: 8px;
+
+    .link {
+      width: fit-content;
+      gap: 0px;
+      flex-direction: column;
+      font-size: 14px;
+      padding: 4px 16px;
+      z-index: 2;
+    }
+  }
+}

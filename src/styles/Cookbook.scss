@@ -1,0 +1,11 @@
+.outlet {
+  padding-top: 80px;
+  background-color: rgba(0, 0, 0, 0.85);
+  min-height: 100vh;
+}
+
+@media screen and (max-width:599px) {
+  .outlet {
+    padding-top: 70px;
+  }
+}
