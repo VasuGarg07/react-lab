@@ -1,35 +1,85 @@
-.search-container {
-  padding: 16px 32px;
-  width: 80vw;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+.food-nav {
   margin: auto;
+  background-color: #000;
+  color: #f4f4f4;
+  position: fixed;
+  z-index: 2;
+  box-shadow: 0 8px 16px rgb(0 0 0 / .2);
+  border-bottom: 2px solid;
 
-  .input {
+  .title {
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .action-btn {
+    border: 2px solid transparent;
+    border-radius: 50%;
     outline: none;
-    border-radius: 4px;
-    padding: 6px;
-    border: 1px solid;
-    width: 30%;
+    line-height: 0;
+    color: #f4f4f4;
+    background-color: transparent;
+    padding: 4px;
 
-    &:focus {
-      padding: 5px 6px;
-      border: 2px solid;
+    &:hover,
+    &:active {
+      // border: 2px solid;
+      cursor: pointer;
     }
   }
 }
 
-@media screen and (max-width:999px) {
-  .search-container {
-    width: calc(100vw - 8px);
+.MuiPopover-root {
+  backdrop-filter: blur(2px);
+  background-image: linear-gradient(0deg, rgb(0 0 0 / .4), rgb(0 0 0 / .4));
+}
+
+.form {
+  padding: 4px;
+
+  .input,
+  .form-btn {
+    font-size: 16px;
+    border: none;
+    padding: 12px;
+    line-height: 1.2;
+  }
+}
+
+.nav-menu {
+  min-width: 200px;
+  padding: 12px;
+  gap: 12px;
+  align-items: flex-start;
+
+  .link {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
   }
 }
 
 @media screen and (max-width:599px) {
-  .search-container {
-    flex-wrap: wrap;
+  .food-nav {
     justify-content: center;
 
+    .logo {
+      font-size: 24px !important;
+    }
+
+    .title {
+      font-size: 20px !important;
+    }
+
     .input {
-      width: 100%;
+      width: 100% !important;
     }
   }
 }

@@ -17,11 +17,12 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: rgb(226, 224, 224);
+  width: 6px;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #70a9e9;
+  background-color: hsla(0, 0%, 0%, 0.12);
+  border-radius: 16px;
+  height: 6px;
 }

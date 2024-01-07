@@ -8,7 +8,7 @@ interface Props {
   fetchRandom: () => Promise<void>
 }
 
-const QuoteBox = ({ quote, error, isLoading, fetchRandom }: Props) => {
+const QuoteBox = ({ quote, isLoading, fetchRandom }: Props) => {
   if (isLoading) return <CircularProgress color="inherit" />
   // if (error) return <h1>Something Went Wrong</h1>
   return (

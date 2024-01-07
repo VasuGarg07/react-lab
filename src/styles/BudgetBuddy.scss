@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 .navbar {
-  box-shadow: 0 2px 8px #ccc;
+  box-shadow: 0 2px 8px #999999;
+  position: relative;
 
   .app-name {
     font-family: 'Poppins', sans-serif;
@@ -15,7 +16,7 @@
 }
 
 .budget-container {
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   align-items: stretch;
   gap: 16px;
 

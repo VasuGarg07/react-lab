@@ -22,28 +22,35 @@ export interface Question {
 }
 
 // Bartender
-export type Drink = {
+export interface Drink {
   id: string,
   name: string,
   image: string,
   category: string,
   type: string,
+}
+
+export interface DrinkInfo extends Drink {
   glass: string,
-  instructions: string,
+  instructions: string[],
   ingredients: string[]
 }
 
 // Cookbook
-export type Meal = {
+export interface Dish {
   id: string,
   name: string,
   image: string,
   category: string,
   area: string,
-  tags: string
-  source: string,
-  instructions: string,
-  ingredients: string[]
+}
+
+export interface DishInfo extends Dish {
+  tags: string,
+  instructions: string[],
+  ingredients: string[],
+  source?: string,
+  youtube?: string
 }
 
 // Budget Buddy
@@ -93,4 +100,10 @@ export interface MortageData {
   loanAmount: number,
   loanTerm: number,
   interestRate: number
+}
+
+// MovieGrove 
+export interface MovieGenre {
+  id: number;
+  name: string
 }

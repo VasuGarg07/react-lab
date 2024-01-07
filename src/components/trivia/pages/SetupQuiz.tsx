@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, MenuItem, TextField } from '@mui/material';
-import { QuizAPi, QuizCategories } from '@shared/data';
+import { QuizAPi, QuizCategories } from '@shared/quiz.data';
 import { Question } from '@shared/interface';
 import axios from 'axios';
-import ErrorMessage from '../components/ErrorMessage';
+import ErrorMessage from '../../ErrorMessage';
 import { useQuizContext } from "@contexts/quiz.context";
 import '@styles/popup-quiz/SetupQuiz.scss';
 
@@ -34,7 +34,7 @@ const SetupQuiz = () => {
       setError(false);
       const resp = await fetchQuiz(category, difficulty);
       setQuestions(resp.results)
-      navigate("/trivia/quiz");
+      navigate("quiz");
     }
   };
 

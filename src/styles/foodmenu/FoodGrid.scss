@@ -1,17 +1,44 @@
+.page-title {
+  font-family: 'Staatliches', cursive !important;
+  letter-spacing: 1px;
+  color: white;
+}
+
 .foodgrid-container {
   min-height: 100vh;
   padding: 32px;
-  width: 80vw;
+  width: min(960px, calc(100vw - 32px));
   margin: auto;
+
+  .grid-item {
+    // color: white;
+    border-radius: 16px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 16px #000;
+
+    .item-text {
+      font-family: "Kanit", sans-serif;
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      transition: all 0.2s ease-in-out;
+    }
+  }
 }
 
-.loading {
-  padding: 32px;
-  background-color: rgb(243, 246, 249);
-}
+.no-results {
+  justify-content: center;
 
-@media screen and (max-width:999px) {
-  .drinks-container {
-    width: calc(100vw - 8px);
+  img {
+    width: min(400px, 100vh);
+  }
+
+  .message {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
   }
 }

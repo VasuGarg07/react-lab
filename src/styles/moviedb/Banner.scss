@@ -1,0 +1,60 @@
+@import "./variables";
+
+.banner-container {
+  min-height: 360px;
+  margin: auto;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+
+  .banner-info {
+    max-width: 80%;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    color: $bg-color;
+
+    .rating {
+      display: flex;
+      gap: 4px;
+      line-height: 1.4;
+      font-size: 1.2rem;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.banner-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+
+/*Responsives styles*/
+@media (min-width: 1500px) {
+  .banner-info {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1024px) {
+  .bannerContainer {
+    min-height: 370px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    min-height: 240px;
+  }
+
+  .overview {
+    display: none;
+  }
+
+}

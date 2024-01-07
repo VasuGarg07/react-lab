@@ -1,0 +1,9 @@
+.keys {
+  flex-wrap: wrap;
+  gap: 8px;
+
+  .key {
+    min-width: 32px;
+    padding: 4px;
+  }
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.dish-container {
+  .section {
+    width: min(840px, calc(100% - 32px));
+    color: white !important;
+    border-bottom: 1px solid;
+
+    .image-container {
+      line-height: 0;
+      border-radius: 16px;
+      box-shadow: 0 0 32px black;
+
+      img {
+        border-radius: 16px;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 24rem;
+        max-width: 100%;
+      }
+    }
+
+    .dish-name {
+      font-family: 'Staatliches', cursive;
+      letter-spacing: 1px;
+    }
+
+    .navlink {
+      color: #d32f2f;
+
+      &:hover,
+      &:active {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .drink-actions .navlink {
+      color: #9c27b0;
+    }
+
+    .section-name {
+      font-family: 'Poiret One', cursive;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .ingredients {
+      padding-top: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .ingredient {
+        font-size: 16px;
+        background-color: #d32f2f;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-transform: capitalize;
+      }
+    }
+
+    .drink-ing .ingredient {
+      background-color: #9c27b0;
+    }
+
+    .instructions {
+      padding-top: 16px;
+      padding-left: 16px;
+      align-items: flex-start;
+    }
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .dish-container .section {
+    .image-container {
+      width: 64%;
+      margin: auto;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .dish-name {
+      font-size: 32px;
+    }
+
+    .actions {
+      flex-wrap: wrap;
+    }
+
+    .ingredients .ingredient {
+      font-size: 13px;
+      padding: 4px 8px;
+    }
+
+    .instructions {
+      padding-left: 0;
+      font-size: 13px;
+    }
+  }
+}

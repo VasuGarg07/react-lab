@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Question } from "@shared/interface";
-import ErrorMessage from "./ErrorMessage";
+import ErrorMessage from "../../ErrorMessage";
 import '@styles/popup-quiz/Question.scss'
 
 interface QuestionProps {
@@ -44,7 +44,7 @@ const QuestionCard = ({
 
   const handleNext = () => {
     if (currQues > questions.length - 2) {
-      navigate("/trivia/result");
+      navigate("result");
     } else if (selected) {
       setCurrQues(currQues + 1);
       setSelected('');
@@ -52,7 +52,7 @@ const QuestionCard = ({
   };
 
   const handleQuit = () => {
-    navigate('/trivia')
+    navigate('')
     setCurrQues(0);
     // setQuestions([]);
   };

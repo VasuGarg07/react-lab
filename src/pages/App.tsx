@@ -1,66 +1,38 @@
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
 import { Button, Card, CardActionArea, Grid, Typography } from '@mui/material';
+import { Apps } from '@shared/apps';
 import { CardInfo } from '@shared/interface';
+import { defaultTiltOptions } from '@shared/utils';
 import '@styles/App.scss';
+import { useRef } from 'react';
+import { Tilt } from 'react-tilt';
 
-const apps: CardInfo[] = [
-  {
-    image: '/thumbs/shadowgen.png',
-    name: 'Box Shadow Generator',
-    url: '/shadowgen',
-  },
-  {
-    image: '/thumbs/colorgen.png',
-    name: 'Color Generator',
-    url: '/colorgen',
-  },
-  {
-    image: '/thumbs/budget.png',
-    name: 'Budget Buddy',
-    url: '/budget',
-  },
-  {
-    image: '/thumbs/mortage.png',
-    name: 'Mortage Calculator',
-    url: '/mortage',
-  },
-  {
-    image: '/thumbs/aniquote.png',
-    name: 'Anime Quotes',
-    url: '/aniquote',
-  },
-  {
-    image: '/thumbs/quiz.png',
-    name: 'Popup Quiz',
-    url: '/trivia',
-  },
-  {
-    image: '/thumbs/cookbook.png',
-    name: 'Cookbook',
-    url: '/cookbook',
-  },
-  {
-    image: '/thumbs/bartender.png',
-    name: 'The Bartender',
-    url: '/bartender',
-  },
 
-]
 
 const AppCard = (app: CardInfo) => {
   return (
-    <Card className='card'>
-      <CardActionArea href={app.url}>
-        <div className='full-width image-container padding'>
-          <img className='full-width' src={app.image} alt="" />
-          <Typography className='text-center app-name text-ellipsis' variant='body1'>{app.name}</Typography>
-        </div>
-      </CardActionArea>
-    </Card>
+    <Tilt options={defaultTiltOptions}>
+      <Card className='card'>
+        <CardActionArea href={app.url}>
+          <div className='full-width image-container padding'>
+            <img className='full-width' src={app.image} alt="" />
+            <Typography className='text-center app-name text-ellipsis' variant='body1'>{app.name}</Typography>
+          </div>
+        </CardActionArea>
+      </Card>
+    </Tilt>
+
   );
 }
 
 export default function App() {
+
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
 
   return (
     <>
@@ -74,7 +46,7 @@ export default function App() {
           </Typography>
           <div className='full-width flex-centered-container-vr'>
             <Button className='button' variant="contained" size='large'
-              href="#showcase" startIcon={<ExploreOutlinedIcon />}>
+              startIcon={<ExploreOutlinedIcon />} onClick={handleClick}>
               Start Exploring
             </Button>
           </div>
@@ -85,15 +57,27 @@ export default function App() {
         </div>
       </div>
 
-      <div className="padding flex-centered-column showcase" id='showcase'>
+      <div className="padding flex-centered-column showcase" ref={ref}>
         <Typography variant="h2" className='title' gutterBottom>
-          My Projects
+          Beginner Projects
         </Typography>
-
         <Grid container spacing={3} className='padding' sx={{ maxWidth: 1000 }}>
-          {apps.map(app => {
+          {Apps.Beginner.map(app => {
             return (
-              <Grid item xs={4} key={app.name}>
+              <Grid item xs={6} sm={4} key={app.name}>
+                <AppCard {...app} />
+              </Grid>
+            )
+          })}
+        </Grid>
+
+        <Typography variant="h2" className='title' gutterBottom>
+          Intermediate Projects
+        </Typography>
+        <Grid container spacing={3} className='padding' sx={{ maxWidth: 1000 }}>
+          {Apps.Intermediate.map(app => {
+            return (
+              <Grid item xs={6} sm={4} key={app.name}>
                 <AppCard {...app} />
               </Grid>
             )

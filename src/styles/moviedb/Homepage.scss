@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
+@import './variables.scss';
+
+.moviegrove-container {
+  max-height: 100vh;
+
+
+  .movie-nav {
+    border-bottom: 1px solid $light-bg-color;
+    padding: 8px 24px;
+    height: 60px;
+
+    .title {
+      font-family: "Inter", sans-serif;
+      font-weight: bold;
+      font-size: $text-large;
+      text-transform: uppercase;
+
+      .main {
+        color: $main-color;
+      }
+
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .main-content {
+    width: calc(100% - 14rem);
+    height: calc(100vh - 60px);
+    overflow: auto;
+    padding: 32px;
+    // margin: auto;
+    // max-width: 880px;
+  }
+}
+
+.moviegrove-container,
+.movie-nav,
+.main-content,
+.movie-menu {
+  font-family: "Nunito", sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+
+@media (max-width: 768px) {
+  .moviegrove-container .main-content {
+    padding: 16px;
+  }
+}

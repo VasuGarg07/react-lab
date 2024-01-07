@@ -10,7 +10,7 @@ const Result = () => {
 
   useEffect(() => {
     if (!name) {
-      navigate("/");
+      navigate("");
     }
   }, [name]);
 

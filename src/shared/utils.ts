@@ -1,6 +1,30 @@
 import { TableCell, TableRow, styled, tableCellClasses } from "@mui/material";
-import { CHART_COLORS } from "./data";
 import { Aggregate, ExpenseType, Transaction } from "./interface";
+
+export const CHART_COLORS = [
+  '#FF5733',
+  '#28C744',
+  '#5733FF',
+  '#FF33BE',
+  '#33D9FF',
+  '#FFC300',
+  '#EC0A0A',
+  '#01CFAD',
+  '#B633FF',
+  '#0088EE',
+];
+
+export const defaultTiltOptions = {
+  reverse: false,  // reverse the tilt direction
+  max: 35,     // max tilt rotation (degrees)
+  perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
+  scale: 1.02,    // 2 = 200%, 1.5 = 150%, etc..
+  speed: 1000,   // Speed of the enter/exit transition
+  transition: true,   // Set a transition on enter/exit.
+  axis: null,   // What axis should be disabled. Can be X or Y.
+  reset: true,    // If the tilt effect has to be reset on exit.
+  easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+}
 
 export namespace Utils {
   // COLOR GEN
@@ -86,5 +110,16 @@ export namespace Utils {
   // Mortage Calc 
   export const fixInt = (num: number): number => {
     return parseFloat(num.toFixed(0))
+  }
+
+  // FoodMenu
+  export const getAlphabets = () => {
+    const alphabets: string[] = [];
+
+    for (let charCode = 65; charCode <= 90; charCode++) {
+      alphabets.push(String.fromCharCode(charCode));
+    }
+
+    return alphabets;
   }
 }
