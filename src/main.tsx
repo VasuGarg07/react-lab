@@ -87,52 +87,52 @@ const router = createBrowserRouter([
       }
     ],
   },
-  {
-    path: '/moviegrove',
-    element: <>
-      <ScrollRestoration />
-      <MovieGrove />
-    </>,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: 'home',
-        element: <MovieHome />
-      },
-      {
-        path: 'search/:searchTerm',
-        element: <SearchResults />
-      },
-      {
-        path: 'movies',
-        element: <Movies />
-      },
-      {
-        path: 'movie/:movieId',
-        element: <Movie />
-      },
-      {
-        path: 'series',
-        element: <Series />
-      },
-      {
-        path: 'serie/:serieId',
-        element: <Serie />
-      },
-      {
-        path: 'genres',
-        element: <Genres />
-      },
-      {
-        path: 'genre/genreId',
-        element: <SearchResults />
-      },
-      {
-        path: '',
-        loader: () => redirect('home')
-      }
-    ]
-  },
+  // {
+  //   path: '/moviegrove',
+  //   element: <>
+  //     <ScrollRestoration />
+  //     <MovieGrove />
+  //   </>,
+  //   errorElement: <ErrorPage />,
+  //   children: [
+  //     {
+  //       path: 'home',
+  //       element: <MovieHome />
+  //     },
+  //     {
+  //       path: 'search/:searchTerm',
+  //       element: <SearchResults />
+  //     },
+  //     {
+  //       path: 'movies',
+  //       element: <Movies />
+  //     },
+  //     {
+  //       path: 'movie/:movieId',
+  //       element: <Movie />
+  //     },
+  //     {
+  //       path: 'series',
+  //       element: <Series />
+  //     },
+  //     {
+  //       path: 'serie/:serieId',
+  //       element: <Serie />
+  //     },
+  //     {
+  //       path: 'genres',
+  //       element: <Genres />
+  //     },
+  //     {
+  //       path: 'genre/genreId',
+  //       element: <SearchResults />
+  //     },
+  //     {
+  //       path: '',
+  //       loader: () => redirect('home')
+  //     }
+  //   ]
+  // },
   {
     path: "/bartender",
     element: <>
