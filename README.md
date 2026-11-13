@@ -6,10 +6,7 @@ A pnpm workspace monorepo of independent React mini-applications — each app bu
 
 ## Applications
 
-- 🧩 **Formlyst** — A visual builder for structured, multi-step forms. Drag fields and sections around, configure validation rules, then publish — anyone with the share link gets the form rendered at runtime from the stored config. Responses come back to a dashboard with a per-submission detail view.
-
 - 💼 **Jobscape** — A two-sided job board. Register as an applicant or an employer: applicants build a profile, browse and search jobs and companies, apply with an optional cover letter, save roles, and track applications; employers set up a company, post and manage jobs (edit, archive, delete), and review applicants with resumes and cover letters.
-
 
 - ❌⭕ **Super Tic-Tac-Toe** — Tic-tac-toe with a strategic twist. Play on a 3×3 grid of boards where your move dictates which board your opponent must play on next. Local two-player, with a guided start popup and live instructions.
 
@@ -63,7 +60,6 @@ react-lab/
 │   ├── showcase/          # hub/landing page — links to all apps
 │   ├── blogify/
 │   ├── budget-buddy/
-│   ├── formlyst/
 │   ├── invoice-gen/
 │   ├── jobscape/
 │   ├── json-live/

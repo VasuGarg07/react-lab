@@ -59,7 +59,7 @@ In the root `package.json`, add to the `scripts` block:
 ## 5. Create the Firebase Hosting site
 
 Naming convention: showcase uses `vasugarg-labs`; every other app uses `vgl-<word>`
-(short, readable, one word — e.g. `vgl-formlyst`, `vgl-jsonviewer`). Then:
+(short, readable, one word — e.g. `vgl-quizzo`, `vgl-jsonviewer`). Then:
 
 ```
 firebase hosting:sites:create vgl-<app>

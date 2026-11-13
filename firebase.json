@@ -19,12 +19,6 @@
       "rewrites": [{ "source": "**", "destination": "/index.html" }]
     },
     {
-      "target": "formlyst",
-      "public": "apps/formlyst/dist",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{ "source": "**", "destination": "/index.html" }]
-    },
-    {
       "target": "invoice-gen",
       "public": "apps/invoice-gen/dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
