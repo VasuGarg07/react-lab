@@ -10,7 +10,6 @@ A pnpm workspace monorepo of independent React mini-applications — each app bu
 
 - 💼 **Jobscape** — A two-sided job board. Register as an applicant or an employer: applicants build a profile, browse and search jobs and companies, apply with an optional cover letter, save roles, and track applications; employers set up a company, post and manage jobs (edit, archive, delete), and review applicants with resumes and cover letters.
 
-- ⚔️ **Pokeverse** — A full Pokémon experience built on top of PokéAPI. Browse a virtualized Pokédex, drill into rich detail pages (stats, evolutions, moves, sprites, varieties), then assemble a team and run turn-based battles in a multi-screen flow — setup → team selection → loading → battle.
 
 - ❌⭕ **Super Tic-Tac-Toe** — Tic-tac-toe with a strategic twist. Play on a 3×3 grid of boards where your move dictates which board your opponent must play on next. Local two-player, with a guided start popup and live instructions.
 
@@ -71,7 +70,6 @@ react-lab/
 │   ├── loan-wizard/
 │   ├── markdown-live/
 │   ├── poke-memory/
-│   ├── pokeverse/
 │   ├── quizzo/
 │   ├── recipe-haven/
 │   ├── sorting-visualizer/

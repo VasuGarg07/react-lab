@@ -61,12 +61,6 @@
       "rewrites": [{ "source": "**", "destination": "/index.html" }]
     },
     {
-      "target": "pokeverse",
-      "public": "apps/pokeverse/dist",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{ "source": "**", "destination": "/index.html" }]
-    },
-    {
       "target": "quizzo",
       "public": "apps/quizzo/dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
